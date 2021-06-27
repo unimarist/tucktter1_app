@@ -1,30 +1,69 @@
-<div class="contents row">
-  <div class="container">
-    <h2>Sign up</h2>
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <%= devise_error_messages! %>
-
+<div class="contents_sign_up">
+ <div class="left_back">
+ </div>
+   
+  <div class="middle_back">
+    <div class= 'rogo'></div>
+       <div class="title">ツクッター</div>
+    <p class="page_top">アカウント登録</p>
+       <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+       <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :メールアドレス %><br />
+          <%= f.email_field :email %>
+        </div>
+        <div class="field">
+          <%= f.label :"パスワード" %>
+            (<%= @minimum_password_length %> 文字以上)<br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+        <div class="field">
+          <%= f.label :"パスワード(確認)" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+     <div class="field">
+          <%= f.submit "登録する", class: "btn-n btn--orange btn--shadow" %>
+          <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
+        </div>
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email %>
-      </div>
+      <p class="warn">講師としての登録を希望の方は以下項目も入力してください</p>
+          <%= f.label :"姓" %><br />
+          <%= f.text_field :FirstName, autofocus: true %>
+       </div>
+        <div class="field">
+          <%= f.label :"名" %><br />
+          <%= f.text_field :LastName, autofocus: true %>
+       </div>
+        <div class="field">
+          <%= f.label :"大学名" %><br />
+          <%= f.text_field :university, autofocus: true %>
+       </div>
+         <div class="field">
+          <%= f.label :"学部" %><br />
+          <%= f.text_field :department, autofocus: true %>
+       </div>
+         <div class="field">
+          <%= f.label :"学科" %><br />
+          <%= f.text_field :major, autofocus: true %>
+       </div>
+        <div class="field">
+         <p class="warn">【本人認証】ご自身の顔と学生証が一緒に写った画像をアップロード</p>
+           <%= f.file_field :user_identification %>
+        </div>
+        <div class="field">
+           <%= f.file_field :status_identification ,value: "Unapproved" %>
+        </div>
+          <div class="field">
+           <%= f.file_field :student_or_cauch ,value: "student" %>
+        </div>
+        <div class="field">
+          <%= f.submit "登録する", class: "btn-n btn--orange btn--shadow" %>
+          <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
+        </div>
+       <% end %>
+   </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+ <div class="right_back">
+ </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
-  </div>
 </div>
