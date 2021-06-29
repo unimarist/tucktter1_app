@@ -1,0 +1,257 @@
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+header{
+  height: 10vh;
+  width: 100vw;
+  background-color: grey;
+}
+
+.headder-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.headder-left{
+  margin-left: 30px;
+  width: 30vw;
+  height: 10vh;
+  display: flex;
+}
+
+.headder-right{
+  margin-right: 30px;
+  height: 10vh;
+  display: flex;
+
+}
+
+.headder-logo{
+  margin-right: 30px;
+  width: 9vh;
+  height: 9vh;
+  margin-top: 5px;
+}
+
+.headder-name{
+  font-size: 40px;
+  color: cyan;
+  vertical-align: middle;
+}
+
+
+.account-name{
+  font-size: 30px;
+  color: cyan;
+  vertical-align: auto;
+}
+
+.headder-account{
+  margin-right: 30px;
+  width: 9vh;
+  height: 9vh;
+  margin-top: 5px;
+}
+
+.middle-content{
+  height: 80vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+}
+
+.side-bar{
+  height: 80vh;
+  width: 20vw;
+  background-color: lightseagreen;
+}
+
+.main{
+  height: 90vh;
+  overflow: auto;
+}
+
+.tweet-content{
+  margin-bottom: 10px;
+}
+
+.side-bar-content{
+  color: #333;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.tweet-content-top{
+  background-color: cyan;
+  text-align: center;
+}
+
+.tweet-items{
+color: black;
+font-size: 30px;
+}
+
+ul{
+  text-align: center;
+}
+
+.top-item{
+  font-size: 30px;
+}
+
+.research-content{
+  margin-bottom: 10px;
+}
+
+.research-content-top{
+  background-color: cyan;
+  text-align: center;
+}
+
+.research-items{
+  color: black;
+  font-size: 30px;
+}
+
+.coach-content-for-student{
+  margin-bottom: 10px;
+}
+
+.coach-content-for-coach{
+  margin-bottom: 10px;
+}
+
+.coach-content{
+  margin-bottom: 10px;
+}
+
+.coach-content-top{
+  background-color: cyan;
+  text-align: center;
+}
+
+
+
+.main{
+  height: 80vh;
+  width: 80vw;
+  background-color: lightskyblue;
+}
+
+.post-function{
+  display: flex;
+  justify-content: flex-start;
+  background-color:white;
+}
+
+.account-icon{
+  margin-left: 20px;
+  width: 9vh;
+  height: 9vh;
+  margin-top: 10px;
+}
+
+.tweet-form{
+  width: 70vw;
+  height: 20vh;
+}
+
+.tweet-content-form{
+  width: 70vw;
+  height: 10vh;
+  padding: 15px;
+  border: 1px solid white;
+}
+
+.tweet-send{
+  width: 5vw;
+  padding: 5px;
+  color: black;
+  background-color: cyan;
+  margin-left: 65vw;
+}
+
+.content-post-area{
+  width: 80vw;
+  height: 20vh;
+  margin-top: 10px;
+  background-color: #fad9e9;
+}
+
+.content-post{
+  display: flex;
+  justify-content: left;
+}
+
+.contributor-icon{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.content-post-right-top{
+  display: flex;
+  justify-content: left;
+}
+
+.contributor-name{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.time{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.tweet-string{
+  margin-left: 10px;
+}
+
+.content-post-bottom{
+  display: flex;
+  justify-content: left;
+}
+
+.tweet-good-area{
+  width: 5vw;
+  display: flex;
+  justify-content: center;
+  margin-left: 5vw;
+}
+
+.tweet-comment-area{
+  width: 5vw;
+  display: flex;
+  justify-content: center;
+}
+
+.tweet-good,.tweet-comment{
+  width: 5vh;
+  height: 5vh;
+}
+
+footer{
+  height: 10vh;
+  width: 100vw;
+  background-color: darkgray;
+}
+
+
