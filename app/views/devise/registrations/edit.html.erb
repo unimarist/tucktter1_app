@@ -1,43 +1,94 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="contents_edit">
+ <div class="left_back">
+ </div>
+  <div class="middle_back">
+     <p class="title">アカウント設定</p>
+     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+       <%= render "devise/shared/error_messages", resource: resource %>
+       <div class="field">
+          <%= f.label :メールアドレス %><br />
+          <%= f.email_field :email %>
+        </div>
+       <div class="field">
+          <%= f.label :"姓" %><br />
+          <%= f.text_field :FirstName, autofocus: true %>
+       </div>
+        <div class="field">
+          <%= f.label :"名" %><br />
+          <%= f.text_field :LastName, autofocus: true %>
+       </div>
+        <div class="field">
+          <%= f.label :"誕生日" %><br />
+          <%= f.text_field :birthday, autofocus: true %>
+       </div>
+        <div class="field">
+          <%= f.label :"趣味" %><br />
+          <%= f.text_field :hobby, autofocus: true %>
+       </div>
+        <div class="field">
+          <%= f.label :"一言" %><br />
+          <%= f.text_field :aWord, autofocus: true %>
+       </div>
+        <div class="field">
+          <%= f.label :"好きな教科" %><br />
+          <%= f.text_field :favoriteSubject, autofocus: true %>
+       </div>
+        <div class="field">
+          <%= f.label :"ニックネーム" %><br />
+          <%= f.text_field :Nickname, autofocus: true %>
+       </div>
+       <div class="field">
+           <p>現在のユーザアイコン</p><br />
+           <% if current_user.user_icon.presence %>
+             <div>
+              <%= image_tag(current_user.user_icon, class: 'icon') %>
+             </div>
+           <% else %>  
+             <div>    
+              <%= image_tag("/images/default_user.png", class: 'icon')  %>
+            </div>
+           <% end %>
+           <%= f.label :"ユーザアイコンを変更する場合は画像ファイルを選択して下さい▼" %><br/><br>
+           <%= f.file_field :user_icon %>
+       </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+       <% if current_user.student_or_cauch ==  "cauch" %>
+        <div class="field">
+          <%= f.label :"大学名" %><br />
+          <%= f.text_field :university, autofocus: true %>
+       </div>
+         <div class="field">
+          <%= f.label :"学部" %><br />
+          <%= f.text_field :department, autofocus: true %>
+       </div>
+         <div class="field">
+          <%= f.label :"学科" %><br />
+          <%= f.text_field :major, autofocus: true %>
+       </div>
+       <% end %>
+       <div class="field">
+           <%= f.label :"パスワード変更： 新しいパスワード" %> (6文字以上)<br />
+           <%= f.password_field :password, autocomplete: "new-password" %>
+       </div>
+       <div class="field">
+           <%= f.label :"新しいパスワード(確認)" %><br />
+           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+       </div>
+       <div class="field">
+           <%= f.label :"上記内容で更新する場合は、現在のパスワードを入力して下さい",class:"warn" %> <br />
+           <%= f.password_field :current_password, autocomplete: "current-password" %>
+       </div>
+       <div class="field">
+           <%= f.submit "更新する",class: "btn-n btn--orange btn--shadow" %>
+           <%= link_to "戻る", "/", class: "btn btn--blue btn--shadow" %>
+      </div>
     <% end %>
+       <div class="field">
+           <p class="warn">※ アカウントを削除する場合は以下のボタンをクリックして下さい</p><br>
+           <%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "アカウント削除： 本当に削除しますか?" }, method: :delete %><br>
+       </div>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:  "btn btn--blue btn--shadow" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+   <div class="right_back">
+ </div>
+</div>

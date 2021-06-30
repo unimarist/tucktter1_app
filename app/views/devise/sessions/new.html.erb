@@ -1,27 +1,28 @@
-<div class="contents row">
-  <div class="container">
-    <h2>Log in</h2>
-    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+<div class="contents">
+ <div class="left_back">
+ </div>
+   
+  <div class="middle_back">
+    <div class= 'rogo'></div>
+       <div class="title">ツクッター</div>
+    <p class="page_top">ログイン</p>
+       <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+       <div class="field">
+        <%= f.label :メールアドレス %><br />
+        <%= f.email_field :email %>
       </div>
-
-      <div class="field">
-        <%= f.label :password %><br />
+       <div class="field">
+        <%= f.label :パスワード %><br />
         <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+       </div>
+       <div class="field">
+        <%= f.submit "ログインする" , class: "btn-n btn--orange btn--shadow"%>
+        <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
+       </div>
+      <% end %>
+   </div>
 
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.label :remember_me %><br />
-          <%= f.check_box :remember_me %>
-        </div>
-      <% end -%>
+ <div class="right_back">
+ </div>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
-      </div>
-    <% end %>
-  </div>
 </div>
