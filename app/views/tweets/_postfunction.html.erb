@@ -1,7 +1,7 @@
         <div class="post-function">
           <a href="/"><img src="/images/icon.png" alt="アイコン" class="account-icon"></a>
-          <form class="tweet-form">
-            <textarea name="tweet" placeholder="面白いことや、不思議に思ったことはあったかな？" class="tweet-content-form"></textarea>
-            <input type="submit" value="つぶやく" class="tweet-send">
-          </form>
-        </div>
+          <%= form_with(model: @tweet, local: true) do |form| %>
+            <%= form.text_area :tweet,placeholder: "面白いことや、不思議に思ったことはあったかな？", class: "tweet-content-form" %>
+            <%= form.submit "つぶやく", class: "tweet-send" %>
+          <%end%>
+        </div>        
