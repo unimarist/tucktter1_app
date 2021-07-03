@@ -3,14 +3,20 @@
  </div>
    
   <div class="middle_back">
-    <div class= 'rogo'></div>
-       <div class="title">ツクッター</div>
-    <p class="page_top">アカウント登録</p>
+
+     <div class= 'rogo'></div>
+     <div class="title">ツクッター</div><br><br>
+     <br><br>
+     <p class="page_top">アカウント登録</p>
        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
        <%= devise_error_messages! %>
         <div class="field">
           <%= f.label :メールアドレス %><br />
           <%= f.email_field :email %>
+        </div>
+        <div class="field">
+          <%= f.label :ニックネーム %><br />
+          <%= f.text_field :Nickname %>
         </div>
         <div class="field">
           <%= f.label :"パスワード" %>
@@ -51,10 +57,10 @@
            <%= f.file_field :user_identification %>
         </div>
         <div class="field">
-           <%= f.file_field :status_identification ,value: "Unapproved" %>
+           <%= f.hidden_field :status_identification ,value: "Unapproved" %>
         </div>
           <div class="field">
-           <%= f.file_field :student_or_cauch ,value: "student" %>
+           <%= f.hidden_field :student_or_cauch ,value: "student" %>
         </div>
         <div class="field">
           <%= f.submit "登録する", class: "btn-n btn--orange btn--shadow" %>

@@ -1,7 +1,17 @@
         <div class="post-function">
-          <a href="/"><img src="/images/icon.png" alt="アイコン" class="account-icon"></a>
+         <% if user_signed_in? %>
+           <% if current_user.user_icon.presence %>
+            <div>
+             <%= link_to image_tag(current_user.user_icon, class: 'icon' )  , root_path  %>
+            </div>
+          <% else %>  
+           <div>    
+             <%= link_to image_tag("/images/icon.png", class: 'account-icon' )  , root_path  %>
+           </div>
+          <% end %> 
           <%= form_with(model: @tweet, local: true) do |form| %>
             <%= form.text_area :tweet,placeholder: "面白いことや、不思議に思ったことはあったかな？", class: "tweet-content-form" %>
             <%= form.submit "つぶやく", class: "tweet-send" %>
           <%end%>
+         <% end %>
         </div>        
