@@ -1,12 +1,16 @@
           <div class="content-post-area">
             <div class="content-post" >
               <div class="content-post-left">
-                <a href="/"><img src="/images/icon.png" alt="アイコン" class="contributor-icon"></a>
+               <% if tweet.user.user_icon.presence %>
+                <%= link_to image_tag(tweet.user.user_icon, class: 'icon' )  , root_path  %>
+               <% else %>
+                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , root_path  %>
+               <% end %>
               </div>
               <div class="content-post-right">
                 <div class="content-post-right-top">
-                  <p class="contributor-name">投稿者名</p>
-                  <p class="time">投稿時間</p>
+                  <p class="contributor-name"><%= tweet.user.Nickname %></p>
+                  <p class="time"><%= tweet.created_at %></p>
                 </div>
                 <p class="tweet-string"><%= tweet.tweet %></p>
               </div>

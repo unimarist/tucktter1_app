@@ -12,7 +12,7 @@
   background-size: cover;
   background-color:rgba(255,255,255,0.4);
   background-blend-mode:lighten;
-  height:180vh;
+  height:200vh;
 }
 
 .contents_edit{
@@ -22,6 +22,15 @@
   background-color:rgba(255,255,255,0.4);
   background-blend-mode:lighten;
   height:300vh;
+}
+
+.contents_edit_stu{
+  display: flex;
+  background-image:url("/images/back.jpg");
+  background-size: cover;
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+  height:230vh;
 }
 
 .left_back{
@@ -65,7 +74,7 @@
   border-bottom: 5px solid #b84c00;
   padding:10px;
   margin-right:10px;
-  height:45px;
+  height:43px;
   
 }
 .btn--orange:hover {
@@ -97,9 +106,10 @@
 .title{
   color:cyan;
   font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:65px;
+  font-size:50px;
   font-weight:900;
   background-color:rgba(255,0,0,0.5);
+  width:50vw;
 }
 
 *{
@@ -132,4 +142,27 @@ body {
 
 .warn{
   color:red;
+}
+
+.icon{
+  border: 1px solid #EEFFFF;
+  width: 9vh;
+  height: 9vh;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color: #EEFFFF;
+  margin-right: 30px;
+}
+
+.unlogin_right{
+  margin:20px;
+}
+
+.logout{
+  margin:20px;
+}
+
+.top{
+  display: flex;
 }

@@ -5,8 +5,26 @@
           <a class="headder-name" href="/">ツクッター</a>
         </div>
         <div class="headder-right">
-          <a href="/"><img src="/images/icon.png" alt="アカウント" class="headder-account"></a>
-          <a class="account-name" href="/">ユーザー名</a>
+         <% if user_signed_in? %>
+          <% if current_user.user_icon.presence %>
+            <div>
+             <%= link_to image_tag(current_user.user_icon, class: 'icon' )  , edit_user_registration_path  %>
+            </div>
+          <% else %>  
+           <div>    
+             <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , edit_user_registration_path  %>
+           </div>
+          <% end %> 
+           <div ><%= link_to current_user.Nickname , edit_user_registration_path ,class: "account-name"   %></div>
+           <div class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:  "btn btn--blue btn--shadow" %></div>
+           
+         <% end %>
+         <% unless user_signed_in? %>
+            <div class="unlogin_right">
+               <%= link_to "ログイン", new_user_session_path, class: "btn btn--orange btn--shadow" %>
+               <%= link_to "新規登録", new_user_registration_path, class:  "btn btn--blue btn--shadow" %>
+            </div>
+         <% end %>
         </div>
       </div>
     </header>
