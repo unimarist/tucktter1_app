@@ -1,4 +1,4 @@
-<% if current_user.student_or_cauch == "cauch" %>
+<% if current_user.student_or_coach == "coach" %>
 <div class="contents_edit">
 <% else %>
 <div class="contents_edit_stu">
@@ -56,7 +56,7 @@
            <%= f.file_field :user_icon %>
        </div>
 
-       <% if current_user.student_or_cauch ==  "cauch" %>
+       <% if current_user.student_or_coach ==  "coach" %>
         <div class="field">
           <%= f.label :"大学名" %><br />
           <%= f.text_field :university, autofocus: true %>

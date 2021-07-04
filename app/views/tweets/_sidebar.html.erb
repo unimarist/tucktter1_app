@@ -19,7 +19,9 @@
               <li><a class="side-bar-content"  href="/">My研究</a></li>
             </ul>
         </div>
+        <% if user_signed_in? %>
         <div class="coach-content">
+            <% if current_user.student_or_coach == "student" %>
           <div class="coach-content-for-student">
             <div class="coach-content-top">
               <b class="top-item">コーチ</b>
@@ -30,6 +32,7 @@
                 <li><a class="side-bar-content"  href="/">コーチになる</a></li>
               </ul>
           </div>
+            <% elsif current_user.student_or_coach == "coach"   %>
           <div class="coach-content-for-coach">
             <div class="coach-content-top">
               <b class="top-item">コーチ</b>
@@ -40,5 +43,19 @@
                 <li><a class="side-bar-content"  href="/">コーチランキング</a></li>
               </ul>
           </div>
+            <% end %>
         </div> 
+            <% if current_user.admin == "true" %>
+        <div class="admin-content">
+          <div class="admin-content-top">
+            <b class="top-item">運営</b>
+          </div>
+            <ul>
+              <li> <%= link_to "講師承認", operations_path , class: "side-bar-content" %></li>
+              <li><a class="side-bar-content"  href="/">-</a></li>
+              <li><a class="side-bar-content"  href="/">-</a></li>
+            </ul>
+        </div>
+            <% end %>
+        <% end %>
       </div>
