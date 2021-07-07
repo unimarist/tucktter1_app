@@ -1,0 +1,47 @@
+<%= render partial: "tweets/header" %>
+<div class="middle-content">
+  <%= render partial: "tweets/sidebar" %>
+  <div class="main">
+    <p class="title-ope">講師希望ユーザ一覧</p>
+   <% @users.each do |user| %>
+     <% if user.user_identification.attached? && user.student_or_coach == "student"  %>
+     <div class="content-post-area-ope">
+    <div class="content-post-right">
+      <div class="content-post-right-top">
+        <p class="contributor-name"><%= user.Nickname %></p>
+         <%= link_to image_tag(user.user_icon, class: 'icon' )  , root_path  %>
+      </div>
+    </div>
+    <div class="content-post-right">
+      <div class="content-post-right-top">
+        <p class="contributor-name"><%= "本名：" + user.FirstName + user.LastName %></p>
+      </div>
+    </div>
+    <div class="content-post-right">
+      <div class="content-post-right-top">
+        <p class="contributor-name"><%= "大学：" + user.university %></p>
+      </div>
+    </div>
+    <div class="content-post-right">
+      <div class="content-post-right-top">
+        <p class="contributor-name"><%= "学部学科：" + user.department + "学部" + user.major + "学科" %></p>
+      </div>
+    </div>
+    <div class="content-post-bottom">
+       <div>
+          <p class="contributor-name">本人証明画像</p>
+       </div>
+       <div>
+          <%= link_to image_tag(user.user_identification)  , root_path  %>
+       </div>
+       <div class="auth">
+        <%= link_to "講師として承認する"  , edit_operation_path(user.id) ,class: "btn btn--blue btn--shadow" %>
+       </div>
+    </div>
+    </div>
+   <% end %>     
+   <% end %>
+  </div>
+  
+</div>
+<%= render partial: "tweets/footer" %>

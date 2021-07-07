@@ -53,14 +53,18 @@
           <%= f.text_field :major, autofocus: true %>
        </div>
         <div class="field">
+          <%= f.label :"ユーザアイコン (ご自身の顔が写った写真をアイコンに設定)" %>
+          <%= f.file_field :user_icon %>
+        </div>
+        <div class="field">
          <p class="warn">【本人認証】ご自身の顔と学生証が一緒に写った画像をアップロード</p>
            <%= f.file_field :user_identification %>
         </div>
         <div class="field">
-           <%= f.hidden_field :status_identification ,value: "Unapproved" %>
+           <%= f.hidden_field :admin ,value: "false" %>
         </div>
           <div class="field">
-           <%= f.hidden_field :student_or_cauch ,value: "student" %>
+           <%= f.hidden_field :student_or_coach ,value: "student" %>
         </div>
         <div class="field">
           <%= f.submit "登録する", class: "btn-n btn--orange btn--shadow" %>
