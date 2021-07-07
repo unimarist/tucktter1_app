@@ -7,14 +7,21 @@
                  <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , root_path  %>
                <% end %>
               </div>
-              <div class="content-post-right">
-                <div class="content-post-right-top">
+              <div class="content-post-center">
+                <div class="content-post-center-top">
                   <p class="contributor-name"><%= tweet.user.Nickname %></p>
                   <p class="time"><%= tweet.created_at %></p>
                 </div>
                 <p class="tweet-string"><%= tweet.tweet %></p>
               </div>
-
+              <div class="content-post-right">
+                <%= image_tag '/images/humbergerbutton.png', class: "humbergerbutton" %>
+                <ul class="more_list">
+                  <li><%= link_to '詳細', tweet_path(tweet.id), method: :get, class: "humberger_list" %></li>
+                  <li><%= link_to '編集', edit_tweet_path(tweet.id), method: :get, class: "humberger_list" %></li>
+                  <li><%= link_to '削除', tweet_path(tweet.id), method: :delete, class: "humberger_list" %></li>
+                </ul>
+              </div>
             </div>
             <div class="content-post-bottom">
               <div class="tweet-good-area">
