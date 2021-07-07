@@ -1,3 +1,6 @@
+ul{
+  list-style: none;
+}
 
 a{
   text-decoration: none;
@@ -75,6 +78,10 @@ header{
   overflow: auto;
 }
 
+.content-post-center{
+  width: 70vw;
+}
+
 .tweet-content{
   margin-bottom: 10px;
 }
@@ -83,6 +90,28 @@ header{
   color: #333;
   margin: 10px;
   font-size: 20px;
+}
+
+.mytweet{
+  color: #333;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.content-post-right{
+  width: 5vw;
+  text-align: right;
+  padding-right: 2vw;
+}
+
+.humbergerbutton{
+  width: 2vw;
+  height: 3vh;
+  margin-top: 1vh;
+}
+
+.humberger_list{
+  margin-left: 1vw;
 }
 
 .tweet-content-top{
@@ -185,6 +214,7 @@ ul{
 .content-post{
   display: flex;
   justify-content: left;
+  height: 14vh;
 }
 
 .contributor-icon{
@@ -192,9 +222,10 @@ ul{
   margin-left: 10px;
 }
 
-.content-post-right-top{
+.content-post-center-top{
   display: flex;
   justify-content: left;
+  height: 5vh;
 }
 
 .contributor-name{
@@ -209,7 +240,11 @@ ul{
 
 .tweet-string{
   margin-left: 10px;
+  height: 10vh;
+  overflow: scroll;
 }
+
+
 
 .content-post-bottom{
   display: flex;
@@ -232,6 +267,11 @@ ul{
 .tweet-good,.tweet-comment{
   width: 5vh;
   height: 5vh;
+}
+
+.comment-index{
+  background-color:white;
+  height: 58vh;
 }
 
 footer{

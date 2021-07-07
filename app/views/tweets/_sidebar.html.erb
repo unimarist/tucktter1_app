@@ -5,8 +5,11 @@
           </div>
               <ul>
                 <li><a class="side-bar-content"  href="/">タイムライン</a></li>
-                <li><a class="side-bar-content"  href="/tweets/new">呟く</a></li>
-                <li><a class="side-bar-content"  href="/">My呟き</a></li>
+
+                <% if user_signed_in? %>
+                  <li><a class="side-bar-content"  href="/tweets/new">呟く</a></li>
+                  <li><%= link_to "My呟き", "/user/#{current_user.id}", class: "mytweet" %></li>
+                <% end %>
               </ul>
         </div>
         <div class="research-content">
@@ -15,8 +18,10 @@
           </div>
             <ul>
               <li><a class="side-bar-content"  href="/">タイムライン</a></li>
-              <li><a class="side-bar-content"  href="/">研究を投稿する</a></li>
-              <li><a class="side-bar-content"  href="/">My研究</a></li>
+              <% if user_signed_in? %>  
+                <li><a class="side-bar-content"  href="/">研究を投稿する</a></li>
+                <li><a class="side-bar-content"  href="/">My研究</a></li>
+              <% end %>
             </ul>
         </div>
         <div class="coach-content">
