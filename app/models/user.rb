@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :tweets,dependent: :destroy
   has_one_attached :user_icon
   has_one_attached :user_identification
+  has_many :comments
 end
