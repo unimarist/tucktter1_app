@@ -1,0 +1,41 @@
+          <div class="content-post-area-research">
+            <div class="content-post" >
+              <div class="content-post-left">
+               <% if research.user.user_icon.presence %>
+                <%= link_to image_tag(research.user.user_icon, class: 'icon' )  , root_path  %>
+               <% else %>
+                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , root_path  %>
+               <% end %>
+              </div>
+              <div class="research-content-post-center">
+                <div class="content-post-center-top">
+                  <% if research.user.student_or_coach == "coach" %>
+                    <%= image_tag("/images/coach.png", class: 'coach_icon' ) %>
+                  <% end %>
+                  <p class="contributor-name"><%= research.user.Nickname %></p>
+                  <p class="time"><%= research.created_at %></p>
+                </div>
+                 <%= flash[:error_research] %> 
+                 <p class="research-string">【研究タイトル】<%= research.research_title %></p>
+                 <p class="research-text">【研究概要】</p>
+                 <p class="research-summary"><%= research.research_summary %></p>
+                 <p class="research-string">【研究URL】<%= research.research_url %></p>
+                <div class="research-bottom">
+                  <div class="research-good-area">
+                    <a href="/"><img src="/images/heart.png" alt="いいね！" class="tweet-good"></a>
+                  </div>
+                  <div class="research-comment-area">
+                    <a href="/"><img src="/images/comment.png" alt="コメントする" class="tweet-comment"></a>
+                  </div>
+                </div>
+             </div>
+             <div class="content-post-right">
+                <%= image_tag '/images/humbergerbutton.png', class: "humbergerbutton" %>
+                <ul class="more_list">
+                  <li><%= link_to '詳細', "/", method: :get, class: "humberger_list" %></li>
+                  <li><%= link_to '編集', "/", method: :get, class: "humberger_list" %></li>
+                  <li><%= link_to '削除', "/", method: :delete, class: "humberger_list" %></li>
+                </ul>
+             </div>
+            </div>
+          </div>

@@ -181,3 +181,26 @@ body {
   width: 5vh;
   height: 5vh;
 }
+
+input[type="text"] {
+  width: 30vw;
+  height: 30px;
+  text-align: center;
+}
+
+input[type="password"] {
+  width: 30vw;
+  height: 30px;
+  text-align: center;
+}
+
+input[type="email"] {
+  width: 30vw;
+  height: 30px;
+  text-align: center;
+}
+
+input[type="submit"] {
+  height:42px;
+  text-align: center;
+}

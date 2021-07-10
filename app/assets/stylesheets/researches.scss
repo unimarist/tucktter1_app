@@ -1,3 +1,66 @@
 // Place all the styles related to the researches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.text_area{
+  margin-top: 5px;
+  font-family:"MS PGothic", "Osaka", Arial, sans-serif;
+  width:600px;
+  height:80px;
+}
+
+.research-send{
+  width: 5vw;
+  padding: 5px;
+  color: black;
+  background-color: cyan;
+  margin-left: 65vw;
+}
+
+.research-string{
+  margin-left: 10px;
+  height: 10vh;
+  overflow: scroll;
+  font-size:30px;
+  font-weight: 800;
+}
+
+.research-text{
+  margin-left: 10px;
+  font-size:30px;
+  font-weight: 800;
+}
+
+.research-summary{
+  margin-left: 30px;
+  height: 30vh;
+  overflow: scroll;
+  font-size:20px;
+  white-space: pre-wrap;
+}
+.content-post-area-research{
+  width: 80vw;
+  height: 70vh;
+  margin-top: 10px;
+  background-color: #fad9e9;
+}
+
+.research-good-area{
+  width: 5vw;
+  justify-content: center;
+}
+
+.research-comment-area{
+  width: 5vw;
+  justify-content: center;
+}
+
+.research-bottom{
+  display: flex;
+  margin-left:30px ;
+}
+
+.research-content-post-center{
+  height:50vh;
+  width: 70vw;
+}
