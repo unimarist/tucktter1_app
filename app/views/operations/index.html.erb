@@ -17,7 +17,7 @@
          <div class="flex">
           <p class="contributor-name">本人証明画像</p>
            <div>
-             <%= link_to image_tag(user.user_identification)  , root_path  %>
+             <%= image_tag(user.user_identification, class: 'identification_icon') %>
            </div>
            <div class="auth">
              <%= link_to "講師として承認する"  , edit_operation_path(user.id) ,class: "btn btn--blue btn--shadow" %>
