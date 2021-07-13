@@ -20,7 +20,7 @@
               <li><%= link_to "タイムライン", researches_path, class: "side-bar-content" %></li>
               <% if user_signed_in? %>  
                 <li><%= link_to "研究を投稿する", new_research_path, class: "side-bar-content" %></li>
-                <li><a class="side-bar-content"  href="/">My研究</a></li>
+                <li><%= link_to "My研究", my_research_researches_path, class: "side-bar-content" %></li>
               <% end %>
             </ul>
         </div>
@@ -57,8 +57,6 @@
           </div>
             <ul>
               <li> <%= link_to "講師承認", operations_path , class: "side-bar-content" %></li>
-              <li><a class="side-bar-content"  href="/">-</a></li>
-              <li><a class="side-bar-content"  href="/">-</a></li>
             </ul>
         </div>
             <% end %>

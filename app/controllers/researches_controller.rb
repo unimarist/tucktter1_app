@@ -34,6 +34,11 @@ class ResearchesController < ApplicationController
     research.destroy
   end
 
+  def my_research
+    @nickname = current_user.Nickname
+    @researches = current_user.researches
+  end
+
   private
   def research_params
     params.require(:research).permit(:research_title,:research_summary,:research_url,:research_status).merge(user_id:current_user.id)

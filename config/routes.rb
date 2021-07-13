@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   end
   resources :user, only: :show
   resources :operations , only: [:index,:edit]
-  resources :researches 
+  resources :researches do
+    collection do
+      get 'my_research'
+    end
+  end
 end
