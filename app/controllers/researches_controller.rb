@@ -2,7 +2,7 @@ class ResearchesController < ApplicationController
   before_action :set_research, only: [:edit, :show]
 
   def index
-    @researches = Research.all
+    @researches = Research.all.order(created_at: :desc)
   end
 
   def new
@@ -36,7 +36,7 @@ class ResearchesController < ApplicationController
 
   def my_research
     @nickname = current_user.Nickname
-    @researches = current_user.researches
+    @researches = current_user.researches.order(created_at: :desc)
   end
 
   private
