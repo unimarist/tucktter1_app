@@ -22,8 +22,12 @@ class ResearchesController < ApplicationController
   end
 
   def update
-    research = Research.find(params[:id])
-    research.update(research_params)
+    @research = Research.find(params[:id])
+    if @research.update(research_params)
+    else
+      flash.now[:error_research] = "各入力項目は必須です。研究タイトルは50字以内、研究概要は500字以内で入力して下さい。"
+      render :edit
+    end
   end
 
   def show
