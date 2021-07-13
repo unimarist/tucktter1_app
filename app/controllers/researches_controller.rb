@@ -18,6 +18,9 @@ class ResearchesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
   def research_params
     params.require(:research).permit(:research_title,:research_summary,:research_url,:research_status).merge(user_id:current_user.id)

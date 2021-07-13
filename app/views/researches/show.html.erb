@@ -1,0 +1,15 @@
+    <%= render partial: "tweets/header" %>
+    <div class="middle-content">
+      <%= render partial: "tweets/sidebar" %>
+      <div class="main">
+        <div class="contents-row">
+          <%= render partial: "researches/postindex", locals: { research: @research } %>
+          <div class="comment-index">
+            ここにコメント一覧表示されます。コメント機能実装後表示されるように実装します。
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <%= render partial: "tweets/footer" %>

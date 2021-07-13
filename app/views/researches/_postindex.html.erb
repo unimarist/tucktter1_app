@@ -32,7 +32,7 @@
              <div class="content-post-right">
                 <%= image_tag '/images/humbergerbutton.png', class: "humbergerbutton" %>
                 <ul class="more_list">
-                  <li><%= link_to '詳細', "/", method: :get, class: "humberger_list" %></li>
+                  <li><%= link_to '詳細', research_path(research.id), method: :get, class: "humberger_list" %></li>
                   <li><%= link_to '編集', "/", method: :get, class: "humberger_list" %></li>
                   <li><%= link_to '削除', "/", method: :delete, class: "humberger_list" %></li>
                 </ul>
