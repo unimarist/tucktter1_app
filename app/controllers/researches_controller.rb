@@ -18,6 +18,14 @@ class ResearchesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    research = Research.find(params[:id])
+    research.update(research_params)
+  end
+
   def show
   end
 
