@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_one_attached :user_icon
   has_one_attached :user_identification
   has_many :comments
+  validates :Nickname, presence: true
 end
