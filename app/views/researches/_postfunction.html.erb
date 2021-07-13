@@ -9,17 +9,19 @@
              <%= link_to image_tag("/images/icon.png", class: 'account-icon' )  , root_path  %>
            </div>
           <% end %> 
+         
           <%= form_with(model: @research, local: true) do |form| %>
+           <div class="field_error"><%= flash[:error_research] %></div> 
            <div class="field">
-             <%= form.label :research_title ,"研究タイトル (必須：50文字以内)" %><br />
-             <%= form.text_field :research_title %>
+             <%= form.label :research_title ,"研究タイトル (必須：50字以内)" %><br />
+             <%= form.text_field :research_title,maxlength: "50" %>
            </div>
            <div class="field">
-             <%= form.label :research_summary ,"研究概要 (必須：500文字以内)" %><br />
-             <%= form.text_area :research_summary, class:"text_area" %>
+             <%= form.label :research_summary ,"研究概要 (必須：500字以内)" %><br />
+             <%= form.text_area :research_summary,maxlength: "500", class:"text_area" %>
            </div>
             <div class="field">
-             <%= form.label :research_url ,"研究URL" %><br />
+             <%= form.label :research_url ,"研究URL (必須)" %><br />
              <%= form.text_field :research_url,placeholder: "自分の研究結果をまとめたページのURLを入力しよう！" %>
            </div>
             <%= form.submit "投稿する", class: "research-send" %>
