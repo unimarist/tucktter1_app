@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :researches do
     collection do
       get 'my_research'
+      get 'search'
+      get 'my_search'
     end
   end
 end
