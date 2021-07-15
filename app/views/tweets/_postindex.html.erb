@@ -13,7 +13,7 @@
                     <%= image_tag("/images/coach.png", class: 'coach_icon' ) %>
                   <% end %>
                   <p class="contributor-name"><%= tweet.user.Nickname %></p>
-                  <p class="time"><%= tweet.created_at %></p>
+                  <p class="time"><%= tweet.created_at.in_time_zone("Tokyo") %></p>
                 </div>
                 <p class="tweet-string"><%= tweet.tweet %></p>
               </div>
@@ -21,8 +21,12 @@
                 <%= image_tag '/images/humbergerbutton.png', class: "humbergerbutton" %>
                 <ul class="more_list">
                   <li><%= link_to '詳細', tweet_path(tweet.id), method: :get, class: "humberger_list" %></li>
-                  <li><%= link_to '編集', edit_tweet_path(tweet.id), method: :get, class: "humberger_list" %></li>
-                  <li><%= link_to '削除', tweet_path(tweet.id), method: :delete, class: "humberger_list" %></li>
+                  <% if user_signed_in? %>
+                   <% if tweet.user.id == current_user.id %>
+                    <li><%= link_to '編集', edit_tweet_path(tweet.id), method: :get, class: "humberger_list" %></li>
+                    <li><%= link_to '削除', tweet_path(tweet.id), method: :delete, class: "humberger_list" %></li>
+                   <% end %>
+                  <% end %>
                 </ul>
               </div>
             </div>

@@ -13,7 +13,7 @@
                     <%= image_tag("/images/coach.png", class: 'coach_icon' ) %>
                   <% end %>
                   <p class="contributor-name"><%= research.user.Nickname %></p>
-                  <p class="time"><%= research.created_at %></p>
+                  <p class="time"><%= research.created_at.in_time_zone("Tokyo") %></p>
                 </div>
                  <%= flash[:error_research] %> 
                  <p class="research-string">【研究タイトル】<%= research.research_title %></p>
@@ -32,9 +32,13 @@
              <div class="content-post-right">
                 <%= image_tag '/images/humbergerbutton.png', class: "humbergerbutton" %>
                 <ul class="more_list">
-                  <li><%= link_to '詳細', "/", method: :get, class: "humberger_list" %></li>
-                  <li><%= link_to '編集', "/", method: :get, class: "humberger_list" %></li>
-                  <li><%= link_to '削除', "/", method: :delete, class: "humberger_list" %></li>
+                  <li><%= link_to '詳細', research_path(research.id), method: :get, class: "humberger_list" %></li>
+                  <% if user_signed_in? %>
+                   <% if research.user.id == current_user.id %>
+                    <li><%= link_to '編集', edit_research_path(research.id), method: :get, class: "humberger_list" %></li>
+                    <li><%= link_to '削除', research_path(research.id), method: :delete, class: "humberger_list" %></li>
+                   <% end %>
+                  <% end %>
                 </ul>
              </div>
             </div>

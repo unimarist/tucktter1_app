@@ -3,9 +3,10 @@
       <%= render partial: "tweets/sidebar" %>
       <div class="main">
         <div class="search_top">
-             <%= form_with(url: search_researches_path, local: true, method: :get) do |form|  %>
+             <%= form_with(url: my_research_researches_path, local: true, method: :get) do |form|  %>
              <%= form.text_field :search_key, placeholder: "研究タイトルで検索する" %>
              <%= form.submit "検索", class: "btn-n btn--orange btn--shadow" %>
+             <%= link_to "検索解除", my_research_researches_path, class:  "btn btn--blue btn--shadow" %>  
            <% end %> 
         </div>
         <div class="contents-row">

@@ -1,3 +1,7 @@
+    <%= render partial: "tweets/header" %>
+    <div class="middle-content">
+      <%= render partial: "tweets/sidebar" %>
+      <div class="main">
         <div class="post-function">
          <% if user_signed_in? %>
            <% if current_user.user_icon.presence %>
@@ -9,7 +13,6 @@
              <%= link_to image_tag("/images/icon.png", class: 'account-icon' )  , root_path  %>
            </div>
           <% end %> 
-         
           <%= form_with(model: @research, local: true) do |form| %>
            <div class="field_error"><%= flash[:error_research] %></div> 
            <div class="field">
@@ -21,10 +24,13 @@
              <%= form.text_area :research_summary,maxlength: "500", class:"text_area" %>
            </div>
             <div class="field">
-             <%= form.label :research_url ,"研究URL (必須)" %><br />
+             <%= form.label :research_url ,"研究URL" %><br />
              <%= form.text_field :research_url,placeholder: "自分の研究結果をまとめたページのURLを入力しよう！" %>
            </div>
             <%= form.submit "投稿する", class: "research-send" %>
           <%end%>
          <% end %>
         </div>        
+      </div>
+    </div>
+    <%= render partial: "tweets/footer" %>
