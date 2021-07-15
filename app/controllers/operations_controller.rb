@@ -4,8 +4,10 @@ class OperationsController < ApplicationController
   end
 
   def edit
-    puts params[:id]
-    redirect_to root_path
+    user = User.find(params[:id])
+    user.student_or_coach = "coach"
+    user.save
+    redirect_to operations_path
   end
 
 end

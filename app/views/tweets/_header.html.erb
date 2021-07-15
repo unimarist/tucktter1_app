@@ -15,6 +15,9 @@
              <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , edit_user_registration_path  %>
            </div>
           <% end %> 
+          <% if current_user.student_or_coach == "coach" %>
+            <%= link_to image_tag("/images/coach.png", class: 'coach_icon' )  , edit_user_registration_path  %>
+          <% end %>
            <div ><%= link_to current_user.Nickname , edit_user_registration_path ,class: "account-name"   %></div>
            <div class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:  "btn btn--blue btn--shadow" %></div>
            

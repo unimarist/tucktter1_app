@@ -9,6 +9,9 @@
               </div>
               <div class="content-post-center">
                 <div class="content-post-center-top">
+                  <% if tweet.user.student_or_coach == "coach" %>
+                    <%= image_tag("/images/coach.png", class: 'coach_icon' ) %>
+                  <% end %>
                   <p class="contributor-name"><%= tweet.user.Nickname %></p>
                   <p class="time"><%= tweet.created_at %></p>
                 </div>

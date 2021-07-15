@@ -177,13 +177,30 @@ body {
   display: flex;
 }
 
-.content-post-area-ope{
-  width: 80vw;
-  height: 45vh;
-  margin-top: 10px;
-  background-color: #fad9e9;
+.coach_icon{
+  width: 5vh;
+  height: 5vh;
 }
 
-.auth{
-  margin:30px;
+input[type="text"] {
+  width: 30vw;
+  height: 30px;
+  text-align: center;
+}
+
+input[type="password"] {
+  width: 30vw;
+  height: 30px;
+  text-align: center;
+}
+
+input[type="email"] {
+  width: 30vw;
+  height: 30px;
+  text-align: center;
+}
+
+input[type="submit"] {
+  height:42px;
+  text-align: center;
 }
