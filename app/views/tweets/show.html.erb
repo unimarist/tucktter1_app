@@ -5,7 +5,23 @@
         <div class="contents-row">
           <%= render partial: "tweets/postindex", locals: { tweet: @tweet } %>
           <div class="comment-index">
-            ここにコメント一覧表示されます。コメント機能実装後表示されるように実装します。
+            <% if user_signed_in? %>
+              <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+                <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "comment-content-form" %>
+                <%= form.submit "投稿する", class: "comment-submit" %>
+              <%end%>
+            <%else%>
+              <strong><p>※※※　コメントの投稿には新規登録/ログインが必要です　※※※</p></strong>
+            <%end%>
+            <div class="comments">
+              <h4>コメント一覧</h4>
+              <% @comments.each do |comment| %>
+                <p>
+                  <strong><%= link_to comment.user.Nickname, "/users/#{comment.user_id}" %></strong>
+                  <%= comment.text %>
+                </p>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

@@ -75,7 +75,7 @@ header{
 
 .main{
   height: 90vh;
-  overflow: auto;
+  overflow: scroll;
 }
 
 .content-post-center{
@@ -278,6 +278,7 @@ ul{
 .comment-index{
   background-color:white;
   height: 58vh;
+  overflow: scroll;
 }
 
 footer{
@@ -285,5 +286,15 @@ footer{
   width: 100vw;
   background-color: darkgray;
 }
+
+.comment-content-form{
+  width: 80vw;
+}
+
+.comment-submit{
+  margin-left: 75vw;
+}
+
+
 
 
