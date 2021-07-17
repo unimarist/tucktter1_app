@@ -31,6 +31,8 @@ class ResearchesController < ApplicationController
   end
 
   def show
+    @comment = ResearchComment.new
+    @comments = @research.research_comments.includes(:user)  
   end
 
   def destroy

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :user, only: :show
   resources :operations , only: [:index,:edit]
   resources :researches do
-    resources :comments, only: :create
+    resources :research_comments, only: :create
     collection do
       get 'my_research'
       get 'search'

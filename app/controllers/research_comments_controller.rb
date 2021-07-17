@@ -1,8 +1,8 @@
 class ResearchCommentsController < ApplicationController
 
   def create
-    Comment.create(comment_params)
-    redirect_to "/researchs/#{comment_params[:research_id]}"
+    ResearchComment.create(comment_params)
+    redirect_to research_path(comment_params[:research_id]) 
   end
 
   private
