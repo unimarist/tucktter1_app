@@ -22,7 +22,7 @@
                  <p class="research-string">【研究URL】<%= research.research_url %></p>
                 <div class="research-bottom">
                   <div class="research-good-area">
-                    <a href="/"><img src="/images/heart.png" alt="いいね！" class="tweet-good"></a>
+                    <%= link_to image_tag("/images/heart.png", class: 'tweet-good' )  , research_research_likes_path(research.id)  %> 
                   </div>
                   <div class="research-comment-area">
                     <%= link_to image_tag("/images/comment.png", class: 'tweet-comment' )  , research_path(research.id)  %> 

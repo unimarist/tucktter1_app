@@ -9,5 +9,11 @@ class User < ApplicationRecord
   has_one_attached :user_identification
   has_many :comments
   has_many :research_comments
+  has_many :research_likes
   validates :Nickname, presence: true
+
+  def already_liked?(research)
+    self.research_likes.exists?(research_id: research.id)
+  end
+
 end

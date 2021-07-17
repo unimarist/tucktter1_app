@@ -2,7 +2,7 @@ class ResearchCommentsController < ApplicationController
 
   def create
     ResearchComment.create(comment_params)
-    redirect_to research_path(comment_params[:research_id]) 
+    redirect_to research_research_likes_path(comment_params[:research_id]) 
   end
 
   private

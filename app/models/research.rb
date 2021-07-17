@@ -4,6 +4,7 @@ class Research < ApplicationRecord
   validates :research_summary,presence: true,length: { maximum: 500 }
   belongs_to :user
   has_many :research_comments
+  has_many :research_likes
 
   def self.search(search_key)
       Research.where('research_title LIKE(?)', "%#{search_key}%")
