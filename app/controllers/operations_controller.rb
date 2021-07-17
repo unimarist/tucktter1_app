@@ -1,4 +1,7 @@
 class OperationsController < ApplicationController
+
+  before_action :return_index
+
   def index
     @users = User.all
   end
@@ -8,6 +11,14 @@ class OperationsController < ApplicationController
     user.student_or_coach = "coach"
     user.save
     redirect_to operations_path
+  end
+
+  private
+
+  def return_index
+    unless user_signed_in?
+      redirect_to "/"
+    end
   end
 
 end

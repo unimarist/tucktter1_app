@@ -1,5 +1,6 @@
 class ResearchLikesController < ApplicationController
   before_action :set_research, only: :index
+  before_action :return_index, except: [:index]
 
   def index
     @like = ResearchLike.new  
@@ -18,6 +19,12 @@ class ResearchLikesController < ApplicationController
   end
 
   private
+
+  def return_index
+    unless user_signed_in?
+      redirect_to "/"
+    end
+  end
 
   def set_research
     @research = Research.find(params[:research_id])

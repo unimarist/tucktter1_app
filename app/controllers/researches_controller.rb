@@ -1,5 +1,6 @@
 class ResearchesController < ApplicationController
   before_action :set_research, only: [:edit, :show]
+  before_action :return_index, except: [:index,:show,:search]
 
   def index
     @researches = Research.all.order(created_at: :desc)
@@ -65,6 +66,13 @@ class ResearchesController < ApplicationController
   end
 
   private
+
+  def return_index
+    unless user_signed_in?
+      redirect_to "/"
+    end
+  end
+
   def research_params
     params.require(:research).permit(:research_title,:research_summary,:research_url,:research_status).merge(user_id:current_user.id)
   end
