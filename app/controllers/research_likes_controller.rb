@@ -1,0 +1,2 @@
+class ResearchLikesController < ApplicationController
+end

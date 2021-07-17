@@ -1,0 +1,2 @@
+module ResearchLikesHelper
+end
