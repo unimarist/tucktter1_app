@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :operations , only: [:index,:edit]
   resources :researches do
     resources :research_comments, only: :create
+    resources :research_likes, only: :create
     collection do
       get 'my_research'
       get 'search'
