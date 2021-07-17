@@ -1,0 +1,2 @@
+class ResearchLike < ApplicationRecord
+end
