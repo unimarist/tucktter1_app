@@ -1,0 +1,2 @@
+class TweetLikesController < ApplicationController
+end
