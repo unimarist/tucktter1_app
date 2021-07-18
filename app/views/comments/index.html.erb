@@ -11,19 +11,9 @@
                 <%= form.submit "投稿する", class: "comment-submit" %><br><br>
               <%end%>
             <%else%>
-             <strong><p>※※※　「いいね」やコメントの投稿には新規登録/ログインが必要です　※※※</p></strong>
+              <strong><p>※※※　コメントの投稿には新規登録/ログインが必要です　※※※</p></strong>
             <%end%>
-            <%= link_to "戻る", tweets_path, class:  "research-send-back" %> 
-            <div class="flex">
-            <div class="comments">
-             <h2>【トータルいいね数】 <%= @likes.count %> </h2>
-              <h4>いいねしたユーザの一覧</h4>
-              <% @likes.each do |like| %>
-                <p>
-                  <strong><%= link_to like.user.Nickname, "/users/#{like.user_id}" %></strong>
-                </p>
-              <% end %>
-            </div>
+             <%= link_to "戻る", tweets_path, class:  "research-send-back" %> 
             <div class="comments">
               <h2>【コメント一覧】</h2>
               <% @comments.each do |comment| %>
@@ -32,7 +22,6 @@
                   <%= comment.text %>
                 </p>
               <% end %>
-            </div>
             </div>
           </div>
         </div>

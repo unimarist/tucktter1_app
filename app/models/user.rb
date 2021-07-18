@@ -17,5 +17,9 @@ class User < ApplicationRecord
     self.research_likes.exists?(research_id: research.id)
   end
 
+  def tweet_already_liked?(tweet)
+    self.tweet_likes.exists?(tweet_id: tweet.id)
+  end
+
 
 end
