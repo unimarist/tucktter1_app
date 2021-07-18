@@ -10,10 +10,12 @@ class User < ApplicationRecord
   has_many :comments
   has_many :research_comments
   has_many :research_likes
+  has_many :tweet_likes
   validates :Nickname, presence: true
 
   def already_liked?(research)
     self.research_likes.exists?(research_id: research.id)
   end
+
 
 end

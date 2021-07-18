@@ -22,10 +22,19 @@
                  <p class="research-string">【研究URL】<%= research.research_url %></p>
                 <div class="research-bottom">
                   <div class="research-good-area">
-                    <%= link_to image_tag("/images/heart.png", class: 'tweet-good' )  , research_research_likes_path(research.id)  %> 
+                  <% if user_signed_in? %>
+                  <% if current_user.already_liked?(research) %>
+                    <%= link_to image_tag("/images/heart.png", class: 'tweet-good' )  , research_research_like_path(research.id,current_user.id), method: :delete  %> 
+                  <% else %>
+                    <%= link_to image_tag("/images/heart.png", class: 'tweet-good-opa' )  , research_research_likes_path(research.id), method: :post   %>
+                  <% end %> 
+                  <% end %>
+                  <% unless user_signed_in? %>
+                   <%= link_to image_tag("/images/heart.png", class: 'tweet-good-opa' )  , research_research_likes_path(research.id)  %>
+                  <% end %>
                   </div>
                   <div class="research-comment-area">
-                    <%= link_to image_tag("/images/comment.png", class: 'tweet-comment' )  , research_path(research.id)  %> 
+                    <%= link_to image_tag("/images/comment.png", class: 'tweet-comment' )  , research_research_comments_path(research.id)  %> 
                   </div>
                 </div>
              </div>

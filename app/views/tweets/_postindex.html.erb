@@ -16,6 +16,7 @@
                   <p class="time"><%= tweet.created_at.in_time_zone("Tokyo") %></p>
                 </div>
                 <p class="tweet-string"><%= tweet.tweet %></p>
+                
               </div>
               <div class="content-post-right">
                 <%= image_tag '/images/humbergerbutton.png', class: "humbergerbutton" %>
@@ -32,7 +33,7 @@
             </div>
             <div class="content-post-bottom">
               <div class="tweet-good-area">
-                <a href="/"><img src="/images/heart.png" alt="いいね！" class="tweet-good"></a>
+               <%= link_to image_tag("/images/heart.png", class: 'tweet-good' )  ,  tweet_tweet_likes_path(tweet.id)  %> 
               </div>
               <div class="tweet-comment-area">
                 <%= link_to image_tag("/images/comment.png", class:"tweet-comment"),tweet_path(tweet.id) %>

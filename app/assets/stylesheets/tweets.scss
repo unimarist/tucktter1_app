@@ -1,210 +1,206 @@
-ul{
+ul {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-header{
+header {
   height: 10vh;
   width: 100vw;
   background-color: grey;
 }
 
-.headder-content{
+.headder-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
-.headder-left{
+.headder-left {
   margin-left: 30px;
   width: 30vw;
   height: 10vh;
   display: flex;
 }
 
-.headder-right{
+.headder-right {
   margin-right: 30px;
   height: 10vh;
   display: flex;
-
 }
 
-.headder-logo{
+.headder-logo {
   margin-right: 30px;
   width: 9vh;
   height: 9vh;
   margin-top: 5px;
 }
 
-.headder-name{
+.headder-name {
   font-size: 40px;
   color: cyan;
   vertical-align: middle;
 }
 
-
-.account-name{
+.account-name {
   font-size: 30px;
   color: cyan;
   vertical-align: auto;
 }
 
-.headder-account{
+.headder-account {
   margin-right: 30px;
   width: 9vh;
   height: 9vh;
   margin-top: 5px;
 }
 
-.middle-content{
+.middle-content {
   height: 80vh;
   width: 100vw;
   background-color: white;
   display: flex;
 }
 
-.side-bar{
+.side-bar {
   height: 80vh;
   width: 20vw;
   background-color: lightseagreen;
 }
 
-.main{
+.main {
   height: 90vh;
   overflow: scroll;
 }
 
-.content-post-center{
+.content-post-center {
   width: 70vw;
 }
 
-.tweet-content{
+.tweet-content {
   margin-bottom: 10px;
 }
 
-.side-bar-content{
+.side-bar-content {
   color: #333;
   margin: 10px;
   font-size: 20px;
 }
 
-.mytweet{
+.mytweet {
   color: #333;
   margin: 10px;
   font-size: 20px;
 }
 
-.content-post-right{
+.content-post-right {
   width: 5vw;
   text-align: right;
   padding-right: 2vw;
 }
 
-.humbergerbutton{
+.humbergerbutton {
   width: 2vw;
   height: 3vh;
   margin-top: 1vh;
 }
 
-.humberger_list{
+.humberger_list {
   margin-left: 1vw;
 }
 
-.tweet-content-top{
+.tweet-content-top {
   background-color: cyan;
   text-align: center;
 }
 
-.tweet-items{
-color: black;
-font-size: 30px;
-}
-
-ul{
-  text-align: center;
-}
-
-.top-item{
-  font-size: 30px;
-}
-
-.research-content{
-  margin-bottom: 10px;
-}
-
-.research-content-top{
-  background-color: cyan;
-  text-align: center;
-}
-
-.research-items{
+.tweet-items {
   color: black;
   font-size: 30px;
 }
 
-.coach-content-for-student{
+ul {
+  text-align: center;
+}
+
+.top-item {
+  font-size: 30px;
+}
+
+.research-content {
   margin-bottom: 10px;
 }
 
-.coach-content-for-coach{
-  margin-bottom: 10px;
-}
-
-.coach-content{
-  margin-bottom: 10px;
-}
-
-.coach-content-top{
+.research-content-top {
   background-color: cyan;
   text-align: center;
 }
 
-.admin-content{
+.research-items {
+  color: black;
+  font-size: 30px;
+}
+
+.coach-content-for-student {
   margin-bottom: 10px;
 }
 
-.admin-content-top{
+.coach-content-for-coach {
+  margin-bottom: 10px;
+}
+
+.coach-content {
+  margin-bottom: 10px;
+}
+
+.coach-content-top {
   background-color: cyan;
   text-align: center;
 }
 
+.admin-content {
+  margin-bottom: 10px;
+}
 
-.main{
+.admin-content-top {
+  background-color: cyan;
+  text-align: center;
+}
+
+.main {
   height: 80vh;
   width: 80vw;
   background-color: lightskyblue;
 }
 
-.post-function{
+.post-function {
   display: flex;
   justify-content: flex-start;
-  background-color:white;
+  background-color: white;
 }
 
-.account-icon{
+.account-icon {
   margin-left: 20px;
   width: 9vh;
   height: 9vh;
   margin-top: 10px;
 }
 
-.tweet-form{
+.tweet-form {
   width: 70vw;
   height: 20vh;
 }
 
-.tweet-content-form{
+.tweet-content-form {
   width: 70vw;
   height: 10vh;
   padding: 15px;
   border: 1px solid white;
 }
 
-.tweet-send{
+.tweet-send {
   width: 5vw;
   padding: 5px;
   color: black;
@@ -212,89 +208,92 @@ ul{
   margin-left: 65vw;
 }
 
-.content-post-area{
+.content-post-area {
   width: 80vw;
   height: 20vh;
   margin-top: 10px;
   background-color: #fad9e9;
 }
 
-.content-post{
+.content-post {
   display: flex;
   justify-content: left;
   height: 14vh;
 }
 
-.contributor-icon{
+.contributor-icon {
   margin-top: 10px;
   margin-left: 10px;
 }
 
-.content-post-center-top{
+.content-post-center-top {
   display: flex;
   justify-content: left;
   height: 5vh;
 }
 
-.contributor-name{
+.contributor-name {
   margin-left: 10px;
   margin-bottom: 10px;
 }
 
-.time{
+.time {
   margin-left: 10px;
   margin-bottom: 10px;
 }
 
-.tweet-string{
+.tweet-string {
   margin-left: 10px;
   height: 10vh;
   overflow: scroll;
 }
 
-.content-post-bottom{
+.content-post-bottom {
   display: flex;
   justify-content: left;
 }
 
-.tweet-good-area{
+.tweet-good-area {
   width: 5vw;
   display: flex;
   justify-content: center;
   margin-left: 5vw;
 }
 
-.tweet-comment-area{
+.tweet-comment-area {
   width: 5vw;
   display: flex;
   justify-content: center;
 }
 
-.tweet-good,.tweet-comment{
+.tweet-good,
+.tweet-comment {
   width: 5vh;
   height: 5vh;
 }
 
-.comment-index{
-  background-color:white;
+.tweet-good-opa {
+  opacity: 0.5;
+  width: 5vh;
+  height: 5vh;
+}
+
+.comment-index {
+  background-color: white;
   height: 58vh;
   overflow: scroll;
 }
 
-footer{
+footer {
   height: 10vh;
   width: 100vw;
   background-color: darkgray;
 }
 
-.comment-content-form{
+.comment-content-form {
   width: 80vw;
 }
 
-.comment-submit{
+.comment-submit {
   margin-left: 75vw;
 }
-
-
-
-
