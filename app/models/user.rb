@@ -8,5 +8,18 @@ class User < ApplicationRecord
   has_one_attached :user_icon
   has_one_attached :user_identification
   has_many :comments
-  validates :Nickname, presence: true
+  has_many :research_comments
+  has_many :research_likes
+  has_many :tweet_likes
+  validates :Nickname, presence: true,uniqueness: true
+
+  def already_liked?(research)
+    self.research_likes.exists?(research_id: research.id)
+  end
+
+  def tweet_already_liked?(tweet)
+    self.tweet_likes.exists?(tweet_id: tweet.id)
+  end
+
+
 end

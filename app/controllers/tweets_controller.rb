@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:edit, :show]
+  before_action :return_index, except: [:index,:show]
 
   def index
     @tweets = Tweet.all.order(created_at: :desc)
@@ -30,9 +31,17 @@ class TweetsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+    @likes = @tweet.tweet_likes.includes(:user)  
   end
 
   private
+
+  def return_index
+    unless user_signed_in?
+      redirect_to "/"
+    end
+  end
+
   def tweet_params
     params.require(:tweet).permit(:tweet).merge(user_id:current_user.id)
   end

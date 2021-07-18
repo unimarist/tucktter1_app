@@ -4,8 +4,7 @@
             <b class="top-item">呟き</b>
           </div>
               <ul>
-                <li><a class="side-bar-content"  href="/">タイムライン</a></li>
-
+                 <li><%= link_to "タイムライン", tweets_path, class: "side-bar-content" %></li>
                 <% if user_signed_in? %>
                   <li><a class="side-bar-content"  href="/tweets/new">呟く</a></li>
                   <li><%= link_to "My呟き", "/user/#{current_user.id}", class: "mytweet" %></li>
@@ -32,9 +31,9 @@
               <b class="top-item">コーチ</b>
             </div>
               <ul>
-                <li><a class="side-bar-content" href="/">自分のコーチ一覧</a></li>
-                <li><a class="side-bar-content"  href="/">アンケート</a></li>
-                <li><a class="side-bar-content"  href="/">コーチになる</a></li>
+                <li><%= link_to "自分のコーチ一覧", tweets_path, class: "side-bar-content" %></li>
+                <li><%= link_to "アンケート", tweets_path, class: "side-bar-content" %></li>
+                <li><%= link_to "コーチになる", tweets_path, class: "side-bar-content" %></li>
               </ul>
           </div>
             <% elsif current_user.student_or_coach == "coach"   %>
@@ -43,9 +42,9 @@
               <b class="top-item">コーチ</b>
             </div>
               <ul>
-                <li><a class="side-bar-content"  href="/">自分の生徒一覧</a></li>
-                <li><a class="side-bar-content"  href="/">主体的な学びへのシート</a></li>
-                <li><a class="side-bar-content"  href="/">コーチランキング</a></li>
+                <li><%= link_to "自分の生徒一覧", tweets_path, class: "side-bar-content" %></li>
+                <li><%= link_to "主体的な学びへのシート", tweets_path, class: "side-bar-content" %></li>
+                <li><%= link_to "コーチランキング", tweets_path, class: "side-bar-content" %></li>
               </ul>
           </div>
             <% end %>

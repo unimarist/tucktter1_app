@@ -2,9 +2,9 @@
             <div class="content-post" >
               <div class="content-post-left">
                <% if tweet.user.user_icon.presence %>
-                <%= link_to image_tag(tweet.user.user_icon, class: 'icon' )  , root_path  %>
+                <%= link_to image_tag(tweet.user.user_icon, class: 'icon' )  , tweets_path  %>
                <% else %>
-                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , root_path  %>
+                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , tweets_path  %>
                <% end %>
               </div>
               <div class="content-post-center">
@@ -16,6 +16,7 @@
                   <p class="time"><%= tweet.created_at.in_time_zone("Tokyo") %></p>
                 </div>
                 <p class="tweet-string"><%= tweet.tweet %></p>
+                
               </div>
               <div class="content-post-right">
                 <%= image_tag '/images/humbergerbutton.png', class: "humbergerbutton" %>
@@ -32,10 +33,19 @@
             </div>
             <div class="content-post-bottom">
               <div class="tweet-good-area">
-                <a href="/"><img src="/images/heart.png" alt="いいね！" class="tweet-good"></a>
+                <% if user_signed_in? %>
+                  <% if current_user.tweet_already_liked?(tweet) %>
+                    <%= link_to image_tag("/images/heart.png", class: 'tweet-good' )  , tweet_tweet_like_path(tweet.id,current_user.id), method: :delete  %> 
+                  <% else %>
+                    <%= link_to image_tag("/images/heart.png", class: 'tweet-good-opa' )  , tweet_tweet_likes_path(tweet.id), method: :post   %>
+                  <% end %> 
+                  <% end %>
+                  <% unless user_signed_in? %>
+                   <%= link_to image_tag("/images/heart.png", class: 'tweet-good-opa' )  , tweet_tweet_likes_path(tweet.id)  %>
+                  <% end %>
               </div>
               <div class="tweet-comment-area">
-                <%= link_to image_tag("/images/comment.png", class:"tweet-comment"),tweet_path(tweet.id) %>
+                <%= link_to image_tag("/images/comment.png", class:"tweet-comment"),tweet_comments_path(tweet.id) %>
               </div>
             </div>
           </div>

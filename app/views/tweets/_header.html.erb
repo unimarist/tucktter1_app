@@ -1,8 +1,8 @@
     <header>
       <div class="headder-content">
         <div class="headder-left">
-          <a href="/"><img src="/images/research1.png" alt="ツクッターロゴ" class="headder-logo"></a>
-          <a class="headder-name" href="/">ツクッター</a>
+           <%= link_to image_tag("/images/research1.png", class: 'headder-logo' )  , tweets_path  %>
+           <%= link_to "ツクッター", tweets_path, class: "headder-name" %>
         </div>
         <div class="headder-right">
          <% if user_signed_in? %>

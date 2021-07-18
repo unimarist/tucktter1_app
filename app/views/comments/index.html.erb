@@ -1,0 +1,32 @@
+    <%= render partial: "tweets/header" %>
+    <div class="middle-content">
+      <%= render partial: "tweets/sidebar" %>
+      <div class="main">
+        <div class="contents-row">
+          <%= render partial: "tweets/postindex", locals: { tweet: @tweet } %>
+          <div class="comment-index">
+            <% if user_signed_in? %>
+              <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+                <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "comment-content-form" %>
+                <%= form.submit "投稿する", class: "comment-submit" %><br><br>
+              <%end%>
+            <%else%>
+              <strong><p>※※※　コメントの投稿には新規登録/ログインが必要です　※※※</p></strong>
+            <%end%>
+             <%= link_to "戻る", tweets_path, class:  "research-send-back" %> 
+            <div class="comments">
+              <h2>【コメント一覧】</h2>
+              <% @comments.each do |comment| %>
+                <p>
+                  <strong><%= link_to comment.user.Nickname, "/users/#{comment.user_id}" %></strong>
+                  <%= comment.text %>
+                </p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <%= render partial: "tweets/footer" %>

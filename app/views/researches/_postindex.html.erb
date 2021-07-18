@@ -2,9 +2,9 @@
             <div class="content-post" >
               <div class="content-post-left">
                <% if research.user.user_icon.presence %>
-                <%= link_to image_tag(research.user.user_icon, class: 'icon' )  , root_path  %>
+                <%= link_to image_tag(research.user.user_icon, class: 'icon' )  , researches_path  %>
                <% else %>
-                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , root_path  %>
+                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , researches_path  %>
                <% end %>
               </div>
               <div class="research-content-post-center">
@@ -22,10 +22,19 @@
                  <p class="research-string">【研究URL】<%= research.research_url %></p>
                 <div class="research-bottom">
                   <div class="research-good-area">
-                    <a href="/"><img src="/images/heart.png" alt="いいね！" class="tweet-good"></a>
+                  <% if user_signed_in? %>
+                  <% if current_user.already_liked?(research) %>
+                    <%= link_to image_tag("/images/heart.png", class: 'tweet-good' )  , research_research_like_path(research.id,current_user.id), method: :delete  %> 
+                  <% else %>
+                    <%= link_to image_tag("/images/heart.png", class: 'tweet-good-opa' )  , research_research_likes_path(research.id), method: :post   %>
+                  <% end %> 
+                  <% end %>
+                  <% unless user_signed_in? %>
+                   <%= link_to image_tag("/images/heart.png", class: 'tweet-good-opa' )  , research_research_likes_path(research.id)  %>
+                  <% end %>
                   </div>
                   <div class="research-comment-area">
-                    <a href="/"><img src="/images/comment.png" alt="コメントする" class="tweet-comment"></a>
+                    <%= link_to image_tag("/images/comment.png", class: 'tweet-comment' )  , research_research_comments_path(research.id)  %> 
                   </div>
                 </div>
              </div>
