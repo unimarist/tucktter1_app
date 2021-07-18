@@ -2,9 +2,9 @@
             <div class="content-post" >
               <div class="content-post-left">
                <% if research.user.user_icon.presence %>
-                <%= link_to image_tag(research.user.user_icon, class: 'icon' )  , root_path  %>
+                <%= link_to image_tag(research.user.user_icon, class: 'icon' )  , researches_path  %>
                <% else %>
-                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , root_path  %>
+                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , researches_path  %>
                <% end %>
               </div>
               <div class="research-content-post-center">

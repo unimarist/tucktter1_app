@@ -1,70 +1,71 @@
-.contents{
+.contents {
   display: flex;
-  background-image:url("/images/back.jpg");
+  background-image: url("/images/back.jpg");
   background-size: cover;
-  background-color:rgba(255,255,255,0.4);
-  background-blend-mode:lighten;
-  height:100vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  height: 100vh;
 }
-.contents_sign_up{
+.contents_sign_up {
   display: flex;
-  background-image:url("/images/back.jpg");
+  background-image: url("/images/back.jpg");
   background-size: cover;
-  background-color:rgba(255,255,255,0.4);
-  background-blend-mode:lighten;
-  height:220vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  height: 100vh;
 }
 
-.contents_edit{
+.contents_edit {
   display: flex;
-  background-image:url("/images/back.jpg");
+  background-image: url("/images/back.jpg");
   background-size: cover;
-  background-color:rgba(255,255,255,0.4);
-  background-blend-mode:lighten;
-  height:285vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  height: 285vh;
 }
 
-.contents_edit_stu{
+.contents_edit_stu {
   display: flex;
-  background-image:url("/images/back.jpg");
+  background-image: url("/images/back.jpg");
   background-size: cover;
-  background-color:rgba(255,255,255,0.4);
-  background-blend-mode:lighten;
-  height:240vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  height: 240vh;
 }
 
-.left_back{
-  width:25vw;
+.left_back {
+  width: 25vw;
 }
 
-.middle_back{
-  background-color:rgba(255,255,255,0.6);
-  background-blend-mode:lighten;
+.middle_back {
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
   text-align: center;
-  width:50vw;
+  width: 50vw;
 }
 
-.page_top{
-  color:#383e4e;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:40px;
-  font-weight:800;
+.page_top {
+  color: #383e4e;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 40px;
+  font-weight: 800;
 }
 
-.field{
+.field {
   margin-top: 35px;
-  font-family:"MS PGothic", "Osaka", Arial, sans-serif;
-  font-size:30px;
-  color:#383e4e;
-  font-weight:800;
+  font-family: "MS PGothic", "Osaka", Arial, sans-serif;
+  font-size: 30px;
+  color: #383e4e;
+  font-weight: 800;
 }
 
-.btn{
-  font-family:"MS PGothic", "Osaka", Arial, sans-serif;
+.btn {
+  font-family: "MS PGothic", "Osaka", Arial, sans-serif;
 }
 
-.btn-n{
-  font-family:"MS PGothic", "Osaka", Arial, sans-serif;
+.btn-n {
+  font-family: "MS PGothic", "Osaka", Arial, sans-serif;
   border-style: none;
 }
 
@@ -72,10 +73,9 @@
   color: #fff;
   background-color: tomato;
   border-bottom: 5px solid #b84c00;
-  padding:10px;
-  margin-right:10px;
-  height:43px;
-  
+  padding: 10px;
+  margin-right: 10px;
+  height: 43px;
 }
 .btn--orange:hover {
   color: #fff;
@@ -87,8 +87,8 @@
   color: #fff;
   background-color: royalblue;
   border-bottom: 5px solid #383e4e;
-  padding:10px;
-  height:50px;
+  padding: 10px;
+  height: 50px;
 }
 
 .btn--blue:hover {
@@ -98,44 +98,46 @@
 }
 
 .btn--shadow {
-  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
-  font-size:15px;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  font-size: 15px;
 }
 
-.title{
-  color:cyan;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:50px;
-  font-weight:900;
-  background-color:rgba(255,0,0,0.5);
-  width:50vw;
+.title {
+  color: cyan;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  background-color: rgba(255, 0, 0, 0.5);
+  width: 50vw;
 }
 
-.title-ope{
-  color:cyan;
-  font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size:30px;
-  font-weight:900;
-  background-color:rgba(255,0,0,0.5);
-  padding-left:20px;
-  margin-bottom:10px;
+.title-ope {
+  color: cyan;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  background-color: rgba(255, 0, 0, 0.5);
+  padding-left: 20px;
+  margin-bottom: 10px;
 }
 
-*{
+* {
   text-decoration: none;
 }
 
 .rogo {
-  background-image:url("/images/research.png");
+  background-image: url("/images/research.png");
   border: 1px solid white;
-  width:  70px;
+  width: 70px;
   height: 70px;
   border-radius: 90%;
   background-position: center center;
   background-size: contain;
-  background-color:#f0f8ff;
-  margin-left:22vw;
+  background-color: #f0f8ff;
+  margin-left: 22vw;
 }
 
 * {
@@ -146,38 +148,38 @@ body {
   margin: 0;
 }
 
-.right_back{
-  width:25vw;
+.right_back {
+  width: 25vw;
 }
 
-.warn{
-  color:red;
+.warn {
+  color: red;
 }
 
-.icon{
-  border: 1px solid #EEFFFF;
+.icon {
+  border: 1px solid #eeffff;
   width: 9vh;
   height: 9vh;
   border-radius: 90%;
   background-position: center center;
   background-size: contain;
-  background-color: #EEFFFF;
+  background-color: #eeffff;
   margin-right: 30px;
 }
 
-.unlogin_right{
-  margin:20px;
+.unlogin_right {
+  margin: 20px;
 }
 
-.logout{
-  margin:20px;
+.logout {
+  margin: 20px;
 }
 
-.top{
+.top {
   display: flex;
 }
 
-.coach_icon{
+.coach_icon {
   width: 5vh;
   height: 5vh;
 }
@@ -201,6 +203,6 @@ input[type="email"] {
 }
 
 input[type="submit"] {
-  height:42px;
+  height: 42px;
   text-align: center;
 }

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  root to: 'tweets#index'
+  devise_for :users,controllers: {   registrations: 'users/registrations',
+    sessions: 'users/sessions' }
+  
+  root to: 'lp#index'
   resources :tweets do
     resources :comments,only: [:index,:create]
     resources :tweet_likes, only: [:index,:create,:destroy]

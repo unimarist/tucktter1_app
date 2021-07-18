@@ -14,8 +14,8 @@
           <%= f.email_field :email %>
         </div>
         <div class="field">
-          <%= f.label :ニックネーム %><br />
-          <%= f.text_field :Nickname %>
+          <%= f.label :ニックネーム %>(15文字以下)<br />
+          <%= f.text_field :Nickname,maxlength: "15" %>
         </div>
         <div class="field">
           <%= f.label :"パスワード" %>
@@ -26,46 +26,13 @@
           <%= f.label :"パスワード(確認)" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
-     <div class="field">
-          <%= f.submit "登録する", class: "btn-n btn--orange btn--shadow" %>
-          <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
-        </div>
-      <div class="field">
-      <p class="warn">講師としての登録を希望の方は以下項目も入力してください</p>
-          <%= f.label :"姓" %><br />
-          <%= f.text_field :FirstName, autofocus: true %>
-       </div>
-        <div class="field">
-          <%= f.label :"名" %><br />
-          <%= f.text_field :LastName, autofocus: true %>
-       </div>
-        <div class="field">
-          <%= f.label :"大学名" %><br />
-          <%= f.text_field :university, autofocus: true %>
-       </div>
-         <div class="field">
-          <%= f.label :"学部" %><br />
-          <%= f.text_field :department, autofocus: true %>
-       </div>
-         <div class="field">
-          <%= f.label :"学科" %><br />
-          <%= f.text_field :major, autofocus: true %>
-       </div>
-        <div class="field">
-          <%= f.label :"ユーザアイコン (ご自身の顔が写った写真をアイコンに設定)" %>
-          <%= f.file_field :user_icon %>
-        </div>
-        <div class="field">
-         <p class="warn">【本人認証】ご自身の顔と学生証が一緒に写った画像をアップロード</p>
-           <%= f.file_field :user_identification %>
-        </div>
         <div class="field">
            <%= f.hidden_field :admin ,value: "false" %>
         </div>
           <div class="field">
            <%= f.hidden_field :student_or_coach ,value: "student" %>
         </div>
-        <div class="field">
+     <div class="field">
           <%= f.submit "登録する", class: "btn-n btn--orange btn--shadow" %>
           <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
         </div>

@@ -38,8 +38,8 @@
           <%= f.text_field :favoriteSubject, autofocus: true %>
        </div>
         <div class="field">
-          <%= f.label :"ニックネーム" %><br />
-          <%= f.text_field :Nickname, autofocus: true %>
+          <%= f.label :"ニックネーム" %>(15文字以下)<br />
+          <%= f.text_field :Nickname, autofocus: true,maxlength: "15" %>
        </div>
        <div class="field">
            <p>現在のユーザアイコン</p><br />
@@ -84,7 +84,7 @@
        </div>
        <div class="field">
            <%= f.submit "更新する",class: "btn-n btn--orange btn--shadow" %>
-           <%= link_to "戻る", "/", class: "btn btn--blue btn--shadow" %>
+           <%= link_to "戻る", tweets_path, class: "btn btn--blue btn--shadow" %>
       </div>
     <% end %>
        <div class="field">

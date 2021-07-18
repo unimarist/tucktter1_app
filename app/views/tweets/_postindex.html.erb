@@ -2,9 +2,9 @@
             <div class="content-post" >
               <div class="content-post-left">
                <% if tweet.user.user_icon.presence %>
-                <%= link_to image_tag(tweet.user.user_icon, class: 'icon' )  , root_path  %>
+                <%= link_to image_tag(tweet.user.user_icon, class: 'icon' )  , tweets_path  %>
                <% else %>
-                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , root_path  %>
+                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , tweets_path  %>
                <% end %>
               </div>
               <div class="content-post-center">
