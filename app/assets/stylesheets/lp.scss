@@ -1,3 +1,100 @@
 // Place all the styles related to the lp controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.lp-contents {
+  display: flex;
+  background-image: url("/images/back.jpg");
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  min-height: 80vh;
+  height: auto;
+}
+
+.lp-left {
+  width: 10vw;
+}
+
+.lp-right {
+  width: 10vw;
+}
+
+.lp-middle {
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+  width: 80vw;
+}
+
+.tomato {
+  color: orangered;
+  margin-left: 17vw;
+}
+
+.lp-rogo {
+  background-image: url("/images/research.png");
+  border: 1px solid white;
+  width: 70px;
+  height: 70px;
+  border-radius: 90%;
+  background-position: center center;
+  background-size: contain;
+  background-color: #f0f8ff;
+  margin-left: 35vw;
+}
+
+.lp-title {
+  color: cyan;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  background-color: rgba(255, 0, 0, 0.5);
+  width: 35vw;
+  margin-left: 17vw;
+  text-align: center;
+}
+
+.description {
+  margin-top: 13px;
+  margin-left: 17vw;
+}
+
+.function {
+  display: flex;
+}
+
+.left-function {
+  margin-left: 17vw;
+  font-size: 30px;
+  font-weight: 900;
+  background-color: rgba(255, 0, 0, 0.2);
+  width: 12vw;
+  height: 35vh;
+  padding-top: 10vh;
+  padding-left: 10px;
+}
+
+.right-function {
+  margin-left: 2vw;
+  font-size: 25px;
+  font-weight: 900;
+  background-color: rgba(0, 102, 255, 0.2);
+  width: 44vw;
+  height: 35vh;
+}
+
+.sub {
+  font-size: 20px;
+}
+
+.point {
+  color: orangered;
+}
+
+.timeline {
+  margin-top: 10px;
+  margin-left: 17vw;
+  font-size: 25px;
+  font-weight: 900;
+}
