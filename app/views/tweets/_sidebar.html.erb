@@ -33,7 +33,7 @@
               <ul>
                 <li><%= link_to "自分のコーチ一覧", tweets_path, class: "side-bar-content" %></li>
                 <li><%= link_to "アンケート", tweets_path, class: "side-bar-content" %></li>
-                <li><%= link_to "コーチになる", tweets_path, class: "side-bar-content" %></li>
+                <li><%= link_to "コーチになる", edit_user_path(current_user.id), class: "side-bar-content" %></li>
               </ul>
           </div>
             <% elsif current_user.student_or_coach == "coach"   %>

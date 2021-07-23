@@ -12,7 +12,7 @@
   background-size: cover;
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: lighten;
-  height: 100vh;
+  height: 105vh;
 }
 
 .contents_edit {
@@ -30,7 +30,16 @@
   background-size: cover;
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: lighten;
-  height: 240vh;
+  height: 245vh;
+}
+
+.contents_edit_request {
+  display: flex;
+  background-image: url("/images/back.jpg");
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  height: 170vh;
 }
 
 .left_back {

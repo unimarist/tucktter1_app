@@ -11,35 +11,35 @@
        <%= render "devise/shared/error_messages", resource: resource %><br><br>
        <div class="field">
           <%= f.label :メールアドレス %><br />
-          <%= f.email_field :email %>
+          <%= f.email_field :email,maxlength: "50" %>
         </div>
        <div class="field">
           <%= f.label :"姓" %><br />
-          <%= f.text_field :FirstName, autofocus: true %>
+          <%= f.text_field :FirstName, autofocus: true,maxlength: "50" %>
        </div>
         <div class="field">
           <%= f.label :"名" %><br />
-          <%= f.text_field :LastName, autofocus: true %>
+          <%= f.text_field :LastName, autofocus: true,maxlength: "50" %>
        </div>
         <div class="field">
           <%= f.label :"誕生日" %><br />
-          <%= f.text_field :birthday, autofocus: true %>
+          <%= f.text_field :birthday, autofocus: true,maxlength: "50" %>
        </div>
         <div class="field">
-          <%= f.label :"趣味" %><br />
-          <%= f.text_field :hobby, autofocus: true %>
+          <%= f.label :"趣味" %>(100文字以内)<br />
+          <%= f.text_field :hobby, autofocus: true ,maxlength: "100"%>
        </div>
         <div class="field">
-          <%= f.label :"一言" %><br />
-          <%= f.text_field :aWord, autofocus: true %>
+          <%= f.label :"一言" %>(100文字以内)<br />
+          <%= f.text_field :aWord, autofocus: true,maxlength: "100" %>
        </div>
         <div class="field">
           <%= f.label :"好きな教科" %><br />
-          <%= f.text_field :favoriteSubject, autofocus: true %>
+          <%= f.text_field :favoriteSubject, autofocus: true,maxlength: "50" %>
        </div>
         <div class="field">
           <%= f.label :"ニックネーム" %>(15文字以下)<br />
-          <%= f.text_field :Nickname, autofocus: true,maxlength: "15" %>
+          <%= f.text_field :Nickname, autofocus: true, maxlength: "15" %>
        </div>
        <div class="field">
            <p>現在のユーザアイコン</p><br />
@@ -59,28 +59,28 @@
        <% if current_user.student_or_coach ==  "coach" %>
         <div class="field">
           <%= f.label :"大学名" %><br />
-          <%= f.text_field :university, autofocus: true %>
+          <%= f.text_field :university, autofocus: true,maxlength: "50" %>
        </div>
          <div class="field">
           <%= f.label :"学部" %><br />
-          <%= f.text_field :department, autofocus: true %>
+          <%= f.text_field :department, autofocus: true,maxlength: "50" %>
        </div>
          <div class="field">
           <%= f.label :"学科" %><br />
-          <%= f.text_field :major, autofocus: true %>
+          <%= f.text_field :major, autofocus: true,maxlength: "50" %>
        </div>
        <% end %>
        <div class="field">
-           <%= f.label :"パスワード変更： 新しいパスワード" %> (6文字以上)<br />
-           <%= f.password_field :password, autocomplete: "new-password" %>
+           <%= f.label :"パスワード変更： 新しいパスワード" %> (6文字以上30文字以下)<br />
+           <%= f.password_field :password, autocomplete: "new-password" ,maxlength: "30"%>
        </div>
        <div class="field">
            <%= f.label :"新しいパスワード(確認)" %><br />
-           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+           <%= f.password_field :password_confirmation, autocomplete: "new-password",maxlength: "30" %>
        </div>
        <div class="field">
            <%= f.label :"上記内容で更新する場合は、現在のパスワードを入力して下さい",class:"warn" %> <br />
-           <%= f.password_field :current_password, autocomplete: "current-password" %>
+           <%= f.password_field :current_password, autocomplete: "current-password",maxlength: "30" %>
        </div>
        <div class="field">
            <%= f.submit "更新する",class: "btn-n btn--orange btn--shadow" %>

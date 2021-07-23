@@ -1,2 +1,0 @@
-class CoachesController < ApplicationController
-end
