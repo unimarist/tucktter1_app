@@ -15,16 +15,16 @@
         </div>
         <div class="field">
           <%= f.label :ニックネーム %>(15文字以下)<br />
-          <%= f.text_field :Nickname,maxlength: "15" %>
+          <%= f.text_field :Nickname %>
         </div>
         <div class="field">
           <%= f.label :"パスワード" %>
             (<%= @minimum_password_length %> 文字以上30文字以下)<br />
-          <%= f.password_field :password, autocomplete: "off",maxlength: "30" %>
+          <%= f.password_field :password, autocomplete: "off" %>
         </div>
         <div class="field">
           <%= f.label :"パスワード(確認)" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off",maxlength: "30" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
         <div class="field">
            <%= f.hidden_field :admin ,value: "false" %>
