@@ -17,10 +17,12 @@
             <div class="comments">
               <h2>【コメント一覧】</h2>
               <% @comments.each do |comment| %>
+               <% if comment.user.present? %>
                 <p>
                   <strong><%= link_to comment.user.Nickname, "/users/#{comment.user_id}" %></strong>
                   <%= comment.text %>
                 </p>
+               <% end %>
               <% end %>
             </div>
           </div>

@@ -19,9 +19,11 @@
              <h2>【トータルいいね数】<%= @likes.count %> </h2>
               <h4>いいねしたユーザの一覧</h4>
               <% @likes.each do |like| %>
+               <% if like.user.present? %>
                 <p>
                   <strong><%= link_to like.user.Nickname, "/users/#{like.user_id}" %></strong>
                 </p>
+               <% end %>
               <% end %>
             </div>
           </div>

@@ -1,7 +1,46 @@
-<h1>ランディングページ</h1>
- <div class="unlogin_right">
-               <%= link_to "ログイン", new_user_session_path, class: "btn btn--orange btn--shadow" %>
-               <%= link_to "新規登録", new_user_registration_path, class:  "btn btn--blue btn--shadow" %>
+ <%= render partial: "tweets/header" %>
+
+<div class="lp-contents">
+
+  <div class="lp-left">
+  </div>
+
+  <div class="lp-middle">
+
+   <h1 class="tomato">好奇心(こうきしん)の輪を広げよう！</h1>
+   <div class= 'lp-rogo'></div>
+   <div class="lp-title">ツクッター</div>
+   <div class= 'description'>
+    <h1>ツックターとは？<h1>
+    <p>小学生を中心とした、好奇心(こうきしん)を育む学びのサービス</p>
+   </div>
+
+   <div class=function>
+    <div class=left-function>
+     <p>ツクッターで<br>できること</p>
+    </div>
+    <div class=right-function>
+     <p class="point">①つぶやく</p>
+     <p class="sub">面白いと思ったことや不思議に思ったこと等をつぶやこう！</p>
+     <p class="point">②研究を共有する</p>
+     <p class="sub">面白いと思ったことや不思議に思ったことについて、研究した結果を共有しよう！</p>
+     <p class="point">③講師の方にアドバイスをもらう</p>
+     <p class="sub">研究の共有について、現役大学生の講師にアドバイスをもらおう！</p>
+    </div>
+   </div>
+
+   <div class=timeline>
+    <p>つぶやきや研究のタイムラインを見学しよう ▶︎ <%= link_to "タイムラインを見学", tweets_path %>
+   </div>
+
+
+   
+  </div>
+ 
+
+  <div class="lp-right">
+  </div>
+
 </div>
 
- <%= link_to "タイムラインを見学してみる！", researches_path, class: "side-bar-content" %>
+  <%= render partial: "tweets/footer" %>

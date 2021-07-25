@@ -5,12 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tweets,dependent: :destroy
   has_many :researches,dependent: :destroy
-  has_one_attached :user_icon
-  has_one_attached :user_identification
-  has_many :comments
-  has_many :research_comments
-  has_many :research_likes
-  has_many :tweet_likes
+  has_one_attached :user_icon,dependent: :destroy
+  has_one_attached :user_identification,dependent: :destroy
+  has_many :comments,dependent: :destroy
+  has_many :research_comments,dependent: :destroy
+  has_many :research_likes,dependent: :destroy
+  has_many :tweet_likes,dependent: :destroy
   validates :Nickname, presence: true,uniqueness: true
 
   def already_liked?(research)

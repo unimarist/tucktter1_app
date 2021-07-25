@@ -1,0 +1,55 @@
+<div class="contents_edit_request">
+ <div class="left_back">
+ </div>
+  <div class="middle_back">
+     <p class="title">講師申請</p>
+     <%= form_with(model: @coach, local: true,method: :patch) do |f| %>
+      <div class="field_error"><%= flash[:error_coach] %></div> 
+       <div class="field">
+          <%= f.label :"姓" %><br />
+          <%= f.text_field :FirstName, autofocus: true,maxlength: "50" %>
+       </div>
+        <div class="field">
+          <%= f.label :"名" %><br />
+          <%= f.text_field :LastName, autofocus: true,maxlength: "50" %>
+       </div>
+       <div class="field">
+           <p>ユーザアイコン</p>
+           <p class="warn">(ご自身の顔が写った写真をアイコンに設定して下さい)</p><br />
+           <% if current_user.user_icon.presence %>
+             <div>
+              <%= image_tag(current_user.user_icon, class: 'icon') %>
+             </div>
+           <% else %>  
+             <div>    
+              <%= image_tag("/images/icon.png", class: 'headder-account')  %>
+            </div>
+           <% end %>
+           <%= f.label :"ユーザアイコンの変更が必要な場合は画像ファイルを選択▼" %><br/><br>
+           <%= f.file_field :user_icon %>
+       </div>
+        <div class="field">
+          <%= f.label :"大学名" %><br />
+          <%= f.text_field :university, autofocus: true,maxlength: "50" %>
+       </div>
+         <div class="field">
+          <%= f.label :"学部" %><br />
+          <%= f.text_field :department, autofocus: true,maxlength: "50" %>
+       </div>
+         <div class="field">
+          <%= f.label :"学科" %><br />
+          <%= f.text_field :major, autofocus: true,maxlength: "50" %>
+       </div>
+        <div class="field">
+         <p class="warn">【本人認証】ご自身の顔と学生証が一緒に写った画像をアップロード</p>
+           <%= f.file_field :user_identification %>
+        </div>
+       <div class="field">
+           <%= f.submit "申請する",class: "btn-n btn--orange btn--shadow" %>
+           <%= link_to "戻る", tweets_path, class: "btn btn--blue btn--shadow" %>
+      </div>
+    <% end %>
+  </div>
+   <div class="right_back">
+ </div>
+</div>

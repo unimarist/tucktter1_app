@@ -8,7 +8,11 @@
      <div class="content-post-area-ope">
          <div class=flex>
           <p class="contributor-name"><%= user.Nickname %></p>
+          <% if user.user_icon.attached?  %>
            <%= link_to image_tag(user.user_icon, class: 'icon' )  , root_path  %>
+          <% else %>
+           <%= image_tag("/images/icon.png", class: 'headder-account' ) %>
+          <% end %>
           <p class="contributor-name"><%= "【本名】 " + user.FirstName + user.LastName %></p>
           <p class="contributor-name"><%= "【大学】 " + user.university %></p>
           <p class="contributor-name"><%= "【学部】 " + user.department %></p>

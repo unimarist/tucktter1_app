@@ -19,18 +19,22 @@
              <h2>【トータルいいね数】 <%= @likes.count %> </h2>
               <h4>いいねしたユーザの一覧</h4>
               <% @likes.each do |like| %>
+               <% if like.user.present? %>
                 <p>
                   <strong><%= link_to like.user.Nickname, "/users/#{like.user_id}" %></strong>
                 </p>
+               <% end %>
               <% end %>
             </div>
             <div class="comments">
               <h2>【コメント一覧】</h2>
               <% @comments.each do |comment| %>
+               <% if comment.user.present? %>
                 <p>
                   <strong><%= link_to comment.user.Nickname, "/users/#{comment.user_id}" %></strong>
                   <%= comment.text %>
                 </p>
+               <% end %>
               <% end %>
             </div>
             </div>

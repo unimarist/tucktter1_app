@@ -11,7 +11,7 @@
        <%= devise_error_messages! %>
         <div class="field">
           <%= f.label :メールアドレス %><br />
-          <%= f.email_field :email %>
+          <%= f.email_field :email,maxlength: "50" %>
         </div>
         <div class="field">
           <%= f.label :ニックネーム %>(15文字以下)<br />
@@ -19,12 +19,12 @@
         </div>
         <div class="field">
           <%= f.label :"パスワード" %>
-            (<%= @minimum_password_length %> 文字以上)<br />
-          <%= f.password_field :password, autocomplete: "off" %>
+            (<%= @minimum_password_length %> 文字以上30文字以下)<br />
+          <%= f.password_field :password, autocomplete: "off",maxlength: "30" %>
         </div>
         <div class="field">
           <%= f.label :"パスワード(確認)" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off",maxlength: "30" %>
         </div>
         <div class="field">
            <%= f.hidden_field :admin ,value: "false" %>
@@ -32,6 +32,7 @@
           <div class="field">
            <%= f.hidden_field :student_or_coach ,value: "student" %>
         </div>
+       
      <div class="field">
           <%= f.submit "登録する", class: "btn-n btn--orange btn--shadow" %>
           <%= link_to "戻る", "/", class:  "btn btn--blue btn--shadow" %> 
