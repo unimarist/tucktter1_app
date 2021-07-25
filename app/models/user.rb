@@ -11,7 +11,11 @@ class User < ApplicationRecord
   has_many :research_comments,dependent: :destroy
   has_many :research_likes,dependent: :destroy
   has_many :tweet_likes,dependent: :destroy
-  validates :Nickname, presence: true,uniqueness: true
+  validates :Nickname, presence: true,uniqueness: true,length: { maximum: 15 }
+  validates :password, length: { maximum: 30 }
+  validates :password_confirmation, length: { maximum: 30 }
+  validates :hobby, length: { maximum: 100 }
+  validates :aWord, length: { maximum: 100 }
 
   def already_liked?(research)
     self.research_likes.exists?(research_id: research.id)
