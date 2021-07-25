@@ -1,0 +1,29 @@
+          <div class="content-post-area">
+            <div class="content-post" >
+              <div class="content-post-left">
+               <% if comment.user.user_icon.presence %>
+                <%= link_to image_tag(comment.user.user_icon, class: 'icon' )  , user_path(comment.user_id)  %>
+               <% else %>
+                 <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , user_path(comment.user_id)  %>
+               <% end %>
+              </div>
+              <div class="content-post-center">
+                <div class="content-post-center-top">
+                  <% if comment.user.student_or_coach == "coach" %>
+                    <%= image_tag("/images/coach.png", class: 'coach_icon' ) %>
+                  <% end %>
+                  <p class="contributor-name"><%= comment.user.Nickname %></p>
+                  <p class="time"><%= comment.created_at.in_time_zone("Tokyo") %></p>
+                </div>
+                <p class="tweet-string"><%= comment.text %></p>
+              </div>
+            </div>
+              <% if comment.user.student_or_coach == "coach" && current_user.id == comment.tweet.user_id && current_user.student_or_coach == "student" %>
+                <div class="comment-content-post-bottom">
+                    <%= link_to image_tag("/images/researcher.png", class:"tweet-comment-post"),tweet_comments_path(comment.tweet.id) %>
+                  <div class="challenge-button">
+                    <p>この先生と一緒に研究する！</p>
+                  </div>
+                </div>
+              <% end %>
+          </div>

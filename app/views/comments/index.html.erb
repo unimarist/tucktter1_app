@@ -19,8 +19,7 @@
               <% @comments.each do |comment| %>
                <% if comment.user.present? %>
                 <p>
-                  <strong><%= link_to comment.user.Nickname, "/users/#{comment.user_id}" %></strong>
-                  <%= comment.text %>
+                  <%= render partial: "commentindex", locals: { comment: comment } %>
                 </p>
                <% end %>
               <% end %>
