@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="2sS91O199zo3PYx82Qx5" name="ページ1">
-        <mxGraphModel dx="1656" dy="859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1509" dy="707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -416,8 +416,10 @@
                 <mxCell id="215" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;startSize=22;endSize=22;strokeWidth=1;" parent="1" source="148" target="161" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="254" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;startSize=26;endSize=26;strokeColor=#f0f0f0;" edge="1" parent="1" source="216" target="247">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="254" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;startSize=26;endSize=26;strokeColor=#f0f0f0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="14" target="247">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="320" y="700" as="sourcePoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="216" value="chats_messages" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;shadow=0;" vertex="1" parent="1">
                     <mxGeometry x="10" y="1169" width="160" height="160" as="geometry"/>
