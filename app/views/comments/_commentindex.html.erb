@@ -20,7 +20,7 @@
             </div>
               <% if comment.user.student_or_coach == "coach" && current_user.id == comment.tweet.user_id && current_user.student_or_coach == "student" %>
                 <div class="comment-content-post-bottom">
-                    <%= link_to image_tag("/images/researcher.png", class:"tweet-comment-post"),tweet_comments_path(comment.tweet.id) %>
+                    <%= link_to image_tag("/images/researcher.png", class:"tweet-comment-post"),new_tweet_comment_chat_room_path(comment.tweet.id,comment.id) %>
                   <div class="challenge-button">
                     <p>この先生と一緒に研究する！</p>
                   </div>

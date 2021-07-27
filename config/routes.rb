@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   
   root to: 'lp#index'
   resources :tweets do
-    resources :comments,only: [:index,:create]
-    resources :tweet_likes, only: [:index,:create,:destroy]
+    resources :comments,only: [:index,:create] do
+      resources :chat_room,only: [:new,:create]
+    end
+      resources :tweet_likes, only: [:index,:create,:destroy]
   end
   resources :user,only: [:show,:edit,:update]
   resources :operations , only: [:index,:edit]
