@@ -8,7 +8,7 @@
             <h3><%= "ニックネーム:#{@user.Nickname}" %></h3>
             <h3><%= "一言:#{@user.aWord}" %></h3>
             <div class="message_link">
-              <%= link_to image_tag("/images/message.png", class:"message"),new_chat_room_path %>
+              <%= link_to image_tag("/images/message.png", class:"message"),new_user_chat_room_path(@user.id) %>
               <p>⏪一緒に研究するには、まずはメッセージを送ろう！</p>            
             </div>
           </div>

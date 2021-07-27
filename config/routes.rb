@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     end
       resources :tweet_likes, only: [:index,:create,:destroy]
   end
-  resources :chat_room,only: [:new,:create]
-  resources :user,only: [:show,:edit,:update]
+  resources :user,only: [:show,:edit,:update] do
+    resources :chat_room,only: [:new,:create]
+  end
   resources :operations , only: [:index,:edit]
   resources :researches do
     resources :research_comments, only: [:index,:create]

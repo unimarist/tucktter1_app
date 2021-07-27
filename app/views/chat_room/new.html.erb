@@ -3,10 +3,12 @@
       <%= render partial: "tweets/sidebar" %>
       <div class="main">
         <h1>新規チャットルーム</h1>
-          <%= form_with url: "/chat_room/new", method: :get, local: true do |form| %>
+          <%= form_with url: "/user/:user_id/chat_room/new", method: :get, local: true do |form| %>
             <%= form.text_field :room_name, placeholder: "研究テーマ名を記入してください" %>
             <%= form.submit "チャットルーム作成" %>
           <% end %>
+          <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+          <input name="room[user_ids][]" type="hidden" value=<%= @user.id %>>
       </div>
     </div>
     <%= render partial: "tweets/footer" %>
