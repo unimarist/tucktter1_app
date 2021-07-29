@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'chats/index'
   devise_for :users,controllers: {   registrations: 'users/registrations',
     sessions: 'users/sessions' }
   
@@ -10,7 +9,9 @@ Rails.application.routes.draw do
       resources :tweet_likes, only: [:index,:create,:destroy]
   end
   resources :user,only: [:show,:edit,:update] do
-    resources :chat_room,only: [:new,:create]
+    resources :chat_room, only: [:new,:create] do
+      resources :chats, only: [:index, :create]
+    end
   end
   resources :operations , only: [:index,:edit]
   resources :researches do
