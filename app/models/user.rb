@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :research_comments,dependent: :destroy
   has_many :research_likes,dependent: :destroy
   has_many :tweet_likes,dependent: :destroy
+  has_many :room_users
+  has_many :chat_rooms, through: :room_users
+  has_many :chats
   validates :Nickname, presence: true,uniqueness: true,length: { maximum: 15 }
   validates :password, length: { maximum: 30 }
   validates :password_confirmation, length: { maximum: 30 }
