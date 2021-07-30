@@ -3,13 +3,21 @@
       <%= render partial: "tweets/sidebar" %>
       <div class="main">
         <div class="index_room_name">
-          <h1><%=@room_name%></h1>
+          <h1><%=@chat_room.room_name%></h1>
         </div>
         <div class="chats">
-          
+          <% @chats.each do |chat| %>
+            <div class="chat_user">
+              <%= chat.user.Nickname %>
+            </div>
+            <div class="chat_date">
+              <%= chat.created_at %>
+            </div>
+            <div class="chat_message">
+              <%= chat.text %>
+            </div>
+          <% end %>
         </div>
       </div>
-
     </div>
-
     <%= render partial: "tweets/footer" %>
