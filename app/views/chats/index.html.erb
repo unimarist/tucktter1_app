@@ -5,19 +5,29 @@
         <div class="index_room_name">
           <h1><%=@chat_room.room_name%></h1>
         </div>
-        <div class="chats">
-          <% @chats.each do |chat| %>
-            <div class="chat_user">
-              <%= chat.user.Nickname %>
+        <% @chats.each do |chat| %>        
+          <div class="content-post-area">
+            <div class="content-post">
+              <div class="content-post-left">
+                <% if chat.user.user_icon.presence %>
+                <%= link_to image_tag(chat.user.user_icon, class: 'icon' )  , user_path(chat.user_id)  %>
+                <% else %>
+                  <%= link_to image_tag("/images/icon.png", class: 'headder-account' )  , user_path(chat.user_id)  %>
+                <% end %>
+              </div>            
+              <div class="content-post-center">
+                <div class="content-post-center-top">
+                  <% if chat.user.student_or_coach == "coach" %>
+                    <%= image_tag("/images/coach.png", class: 'coach_icon' ) %>
+                  <% end %>
+                  <p class="contributor-name"><%= chat.user.Nickname %></p>
+                  <p class="time"><%= chat.created_at.in_time_zone("Tokyo") %></p>
+                </div>
+                <p class="tweet-string"><%= chat.text %></p>
+              </div>
             </div>
-            <div class="chat_date">
-              <%= chat.created_at %>
-            </div>
-            <div class="chat_message">
-              <%= chat.text %>
-            </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <%= render partial: "tweets/footer" %>
