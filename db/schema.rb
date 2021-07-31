@@ -49,6 +49,11 @@ ActiveRecord::Schema.define(version: 2021_07_28_100226) do
     t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
+  create_table "coaches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tweet_id"
@@ -97,7 +102,7 @@ ActiveRecord::Schema.define(version: 2021_07_28_100226) do
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "tweet"
+    t.string "tweet"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
