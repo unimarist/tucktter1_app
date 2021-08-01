@@ -44,6 +44,12 @@
          <p class="warn">【本人認証】ご自身の顔と学生証が一緒に写った画像をアップロード</p>
            <%= f.file_field :user_identification %>
         </div>
+        <div class="field">
+           <%= f.hidden_field :Nickname ,value: current_user.Nickname %>
+        </div>
+        <div class="field">
+           <%= f.hidden_field :email ,value: current_user.email %>
+        </div>
        <div class="field">
            <%= f.submit "申請する",class: "btn-n btn--orange btn--shadow" %>
            <%= link_to "戻る", tweets_path, class: "btn btn--blue btn--shadow" %>

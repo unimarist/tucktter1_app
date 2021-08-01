@@ -13,9 +13,9 @@ class UserController < ApplicationController
   end
 
   def update
+    
     if coach_params[:FirstName].blank? || coach_params[:LastName].blank? || coach_params[:user_identification].blank? || coach_params[:university].blank? || coach_params[:department].blank? || coach_params[:major].blank?
-      flash.now[:error_coach] = "各項目の入力は必須です。"
-      render :edit
+      redirect_to edit_user_path(current_user.id),flash: {error_coach: "各項目の入力は必須です。"}
     else
       @coach = User.find(params[:id]) 
       @coach.update(coach_params)
@@ -31,7 +31,7 @@ class UserController < ApplicationController
   end
 
   def coach_params
-    params.permit(:FirstName,:LastName,:user_icon,:university,:department,:major,:user_identification)
+    params.require(:user).permit(:FirstName,:LastName,:user_icon,:university,:department,:major,:user_identification,:Nickname,:email)
   end
 
 
